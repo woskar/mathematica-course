@@ -1,0 +1,4105 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    129769,       4096]
+NotebookOptionsPosition[     75410,       2861]
+NotebookOutlinePosition[    117259,       3740]
+CellTagsIndexPosition[    117216,       3737]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Kompaktkurs"
+}], "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Inhalts\[UDoubleDot]bersicht", "Section"],
+
+Cell[TextData[StyleBox["1. Einf\[UDoubleDot]hrung\n2. Arithmetik\n3. \
+Fortgeschrittene Anwendungen\n4. Analysis\n5. L\[ODoubleDot]sen von \
+Gleichungen\n6. Lineare Algebra\n7. Grafik\n8. Einige \
+vollst\[ADoubleDot]ndige Beispiele",
+ FontWeight->"Bold"]], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Title"],
+ ". Einf\[UDoubleDot]hrung"
+}], "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Allgemeines"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Moderne Computeralgebra-Systeme (CAS) wie ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["Maple",
+  FontSlant->"Italic"],
+ " oder ",
+ StyleBox["MuPad ",
+  FontSlant->"Italic"],
+ "sind m\[ADoubleDot]chtige Mathe\[Dash]Programme, die neben dem numerischen \
+Rechnen (mit beliebiger Genauigkeit) auch symbolische Mathematik und die \
+Visualisierung von Ergebnissen beherrschen. Entgegen anderslautenden \
+Bekundungen der Hersteller enthalten diese Pakete zwar nicht das \
+mathematische Wissen der Welt und ersetzen auch keinen Mathematiker, aber sie \
+k\[ODoubleDot]nnen einem immerhin viele zeitaufw\[ADoubleDot]ndige Arbeiten \
+abnehmen."
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Starten des Programmes und Erste Hilfe"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Unter Unix kann ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " von einem Terminal aus mit dem Kommando \"",
+ Cell[BoxData["mathematica"]],
+ "\" gestartet werden. Das sollte normalerweise das graphische \
+Benutzerinterface aktivieren. Mathematica ist ein interaktives System, das \
+Eingaben vom Benutzer liest, diese auswertet, und das Ergebnis unmittelbar \
+ausspuckt:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", "2"}]], "Input",
+ CellLabel->"In[1]:="],
+
+Cell[TextData[{
+ "Eingaben werden in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " immer durch gleichzeitiges Dr\[UDoubleDot]cken von \[ShiftKey] und \
+\[ReturnIndicator] ausgewertet!"
+}], "Note"],
+
+Cell["\<\
+Die Ausgabe des Ergebnisses kann man unterdr\[UDoubleDot]cken, indem man ein \
+Semikolon an die Eingabe anh\[ADoubleDot]ngt. Vor allem bei umfangreichen \
+Zwischenergebnissen hilft das, den \[CapitalUDoubleDot]berblick zu bewahren. \
+\
+\>", "Text"],
+
+Cell[TextData[{
+ "Dieses Handbuch ist zu kurz, um auch nur die vorgestellten Funktionen von \
+",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " im Detail zu behandeln. F\[UDoubleDot]r umfangreichere Informationen zu \
+bestimmten Themen ist daher die Online-Hilfe unentbehrlich. Informationen zu \
+speziellen Funktionen lassen sich zus\[ADoubleDot]tzlich mit \"",
+ StyleBox["?\"", "Input"],
+ " abrufen. (Abh\[ADoubleDot]ngig von der verwendeten ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Version, erscheinen Teile des Hilfe-Outputs als anklickbare Verkn\
+\[UDoubleDot]pfungen zur Online-Hilfe und zum ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " Buch; wenn Sie Gl\[UDoubleDot]ck und die richtige Version haben wird die \
+folgende Ausgabe mit einem  ",
+ StyleBox["More... ",
+  FontVariations->{"Underline"->True}],
+ "  abgeschlossen. Falls Sie draufklicken,  werden Sie zu detaillierteren \
+Informationen und Beispielen (!) weitergef\[UDoubleDot]hrt) :"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Log"}]], "Input",
+ CellLabel->"In[2]:="],
+
+Cell["\<\
+Um eine Liste aller Funktionen zu erhalten, deren Namen auf ein bestimmtes \
+Muster passen, kann man ein Sternchen in den gesuchten Namen \
+einf\[UDoubleDot]gen:\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Eq*"}]], "Input",
+ CellLabel->"In[3]:="],
+
+Cell[BoxData[
+ RowBox[{"?", "F*List"}]], "Input",
+ CellLabel->"In[4]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " als Taschenrechner"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Die Notation von Ausdr\[UDoubleDot]cken in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " orientiert sich an",
+ " der gebr\[ADoubleDot]uchlichen mathematischen Notation. Eine \
+g\[UDoubleDot]ltige Eingabe ist beispielsweise"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"2", "^", "12"}], "+", "7.1"}], ")"}], "*", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "1.5"}], "/", "2.5"}], ")"}]}]], "Input",
+ CellLabel->"In[5]:="],
+
+Cell[TextData[{
+ "Es gelten die gebr\[ADoubleDot]uchlichen Vorrangsregeln f\[UDoubleDot]r \
+Operatoren, Ausdr\[UDoubleDot]cke k\[ODoubleDot]nnen aber auch mit ",
+ StyleBox["runden",
+  FontSlant->"Italic"],
+ " Klammern explizit gruppiert werden",
+ ". Funktionsargumente werden in ",
+ StyleBox["eckige",
+  FontSlant->"Italic"],
+ " Klammern eingeschlossen, um sie von gew\[ODoubleDot]hnlichen Ausdr\
+\[UDoubleDot]cken zu unterscheiden:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sin", "[", "3.1", "]"}], "/", 
+  RowBox[{"Sqrt", "[", "2", "]"}]}]], "Input",
+ CellLabel->"In[6]:="],
+
+Cell["\<\
+Die Namen aller in Mathematica vordefinieren Funktionen, Prozeduren und \
+Konstanten beginnen mit einem Gro\[SZ]buchstaben.\
+\>", "Note"],
+
+Cell[TextData[{
+ "Das Multiplikations-Zeichen kann h\[ADoubleDot]ufig weggelassen werden, \
+etwa ist ",
+ Cell[BoxData[
+  RowBox[{"2", 
+   RowBox[{"Sin", "[", 
+    RowBox[{"3", "x"}], "]"}]}]]],
+ " gleichbedeutend mit ",
+ Cell[BoxData[
+  RowBox[{"2", "*", 
+   RowBox[{"Sin", "[", 
+    RowBox[{"3", "*", "x"}], "]"}]}]]],
+ ". Auch Leerzeichen zwischen zwei (abgeschlossenen) Ausdr\[UDoubleDot]cken \
+erwirken die Multikplikation der beiden: ",
+ Cell[BoxData[
+  RowBox[{"x", " ", "y"}]]],
+ " ist also ",
+ Cell[BoxData[
+  RowBox[{"x", "*", "y"}]]],
+ ", ",
+ Cell[BoxData["xy"]],
+ " (ohne Leerzeichen) wird dagegen als ",
+ StyleBox["ein",
+  FontSlant->"Italic"],
+ " Symbol \"",
+ Cell[BoxData["xy"]],
+ "\" gewertet."
+}], "Text"],
+
+Cell[TextData[{
+ "Auf die letzen beiden Ausgaben kann mit ",
+ Cell[BoxData["%"]],
+ " (letzte Ausgabe) und ",
+ Cell[BoxData["%%"]],
+ " (vorletzte Ausgabe) Bezug genommen werden. Meist ist es aber sinnvoller, \
+wichtige Zwischenergebnisse in Variablen zu speichern, um sp\[ADoubleDot]ter \
+auf sie zur\[UDoubleDot]ckgreifen zu k\[ODoubleDot]nnen."
+}], "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. Arithmetik", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Exakte und Inexakte Arithmetik"
+}], "Subsection"],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " unterscheidet zwischen ",
+ StyleBox["exakten",
+  FontSlant->"Italic"],
+ " und ",
+ StyleBox["inexakten",
+  FontSlant->"Italic"],
+ ", also gen\[ADoubleDot]herten numerischen Ausdr\[UDoubleDot]cken. Exakte \
+Rechnungen werden mit beliebiger Genauigkeit durchgef\[UDoubleDot]hrt, bei \
+inexakten kann es nach einigen Schritten zu Rundungsfehlern kommen. \
+Kommazahlen und die ",
+ StyleBox["N\[Dash]",
+  FontFamily->"Courier"],
+ "Funktion erzwingen die numerische Auswertung eines Ausdrucks. ",
+ Cell[BoxData["N"]],
+ " nimmt als optionalen Parameter die Anzahl der signifikanten Stellen des \
+Ergebnisses:"
+}], "Text",
+ AutoItalicWords->{
+  "Mathematica", "MathLink", "MathSource", "MathReader", "MathScript"}],
+
+Cell[BoxData[
+ RowBox[{"Factorial", "[", "50", "]"}]], "Input",
+ CellLabel->"In[7]:="],
+
+Cell[BoxData[
+ RowBox[{"N", "[", "%", "]"}]], "Input",
+ CellLabel->"In[8]:="],
+
+Cell[BoxData[
+ RowBox[{"Sin", "[", 
+  RowBox[{"Pi", "/", "3"}], "]"}]], "Input",
+ CellLabel->"In[9]:="],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"%", ",", "20"}], "]"}]], "Input",
+ CellLabel->"In[10]:="],
+
+Cell[BoxData[
+ RowBox[{"Sin", "[", 
+  RowBox[{"Pi", "/", "3.0"}], "]"}]], "Input",
+ CellLabel->"In[11]:="],
+
+Cell[TextData[{
+ StyleBox["Vorsicht: ",
+  FontSlant->"Italic"],
+ "Die Regeln, die ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " f\[UDoubleDot]r numerische Rechnungen anwendet, sind kompliziert und k\
+\[ODoubleDot]nnen zu \[UDoubleDot]berraschenden Ergebnissen \
+f\[UDoubleDot]hren. Zudem ist umfangreiche Numerik ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " meist sehr langsam. In solchen F\[ADoubleDot]llen kann es von Vorteil \
+sein, die eigentlichen Berechnungen in C\[Dash] oder Fortran\[Dash]Programme \
+auszulagern."
+}], "Text"],
+
+Cell["\<\
+Ein Beispiel, warum man der Numerik von Mathematica (\[UDoubleDot]brigens \
+jeglicher Numerik) \.13nicht immer trauen sollte:\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", "=", "1.11111111111111111111"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{"x", "=", 
+     RowBox[{
+      RowBox[{"2", "*", "x"}], "-", "x"}]}], ",", 
+    RowBox[{"{", "60", "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"x", "\[Equal]", 
+  RowBox[{"x", "+", "1"}]}]}], "Input",
+ CellLabel->"In[12]:="],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "x", "]"}]], "Input",
+ CellLabel->"In[15]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Komplexe Zahlen"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Neben dem Rechnen mit ganzen, rationalen und reellen Zahlen unterst\
+\[UDoubleDot]tzt Mathematica auch komplexe Arithmetik. Die \
+imagin\[ADoubleDot]re Einheit wird als \"",
+ Cell[BoxData["I"]],
+ "\" geschrieben. \n",
+ StyleBox["Mathematica",
+  FontVariations->{"CompatibilityType"->0}],
+ " implementiert die f\[UDoubleDot]r komplexe Arithmetik wichtigen Funktionen \
+Abs[z], Re[z], Im[z], Conjugate[z] und Arg[z]. Achtung: falls z in \
+symbolischer Form als  z=x + y I  gegeben ist, wird angenommen, dass sowohl x \
+als auch y selbst komplex sind !"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"z", "=", 
+  RowBox[{"2", " ", "+", " ", 
+   RowBox[{"3", " ", "I"}]}]}]], "Input",
+ CellLabel->"In[16]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Abs", "[", "z", "]"}], "  "}]], "Input",
+ CellLabel->"In[17]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Im", "[", "z", "]"}], " "}]], "Input",
+ CellLabel->"In[18]:="],
+
+Cell[BoxData[
+ RowBox[{"Conjugate", "[", "z", "]"}]], "Input",
+ CellLabel->"In[19]:="],
+
+Cell[BoxData[
+ RowBox[{"Arg", "[", "z", "]"}]], "Input",
+ CellLabel->"In[20]:="],
+
+Cell[BoxData[
+ RowBox[{"z", "=", 
+  RowBox[{"x", " ", "+", " ", 
+   RowBox[{"y", " ", "I"}]}]}]], "Input",
+ CellLabel->"In[21]:="],
+
+Cell[BoxData[
+ RowBox[{"Re", "[", "z", "]"}]], "Input",
+ CellLabel->"In[22]:="],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"Exp", "[", "x", "]"}], "\[Equal]", 
+   RowBox[{"Exp", "[", 
+    RowBox[{"x", "+", 
+     RowBox[{"2", "I", " ", "Pi"}]}], "]"}]}], "]"}]], "Input",
+ CellLabel->"In[23]:="],
+
+Cell[TextData[{
+ "Wenn es n\[ODoubleDot]tig ist, zwischen exponentieller und \
+trigonometrischer Schreibweise eines Ausdrucks zu wechseln, \
+k\[ODoubleDot]nnen ",
+ Cell[BoxData["ExpToTrig"]],
+ " und ",
+ Cell[BoxData["TrigToExp"]],
+ " verwendet werden:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"ExpToTrig", "[", 
+  RowBox[{"Exp", "[", 
+   RowBox[{"I", " ", "x"}], "]"}], "]"}]], "Input",
+ CellLabel->"In[24]:="],
+
+Cell[BoxData[
+ RowBox[{"TrigToExp", "[", 
+  RowBox[{"%", "^", "2"}], "]"}]], "Input",
+ CellLabel->"In[25]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\.13",
+ 
+ CounterBox["Subsection"],
+ ". Mathematische Funktionen und Konstanten"
+}], "Subsection"],
+
+Cell["\<\
+Alle gebr\[ADoubleDot]uchlichen mathematischen Konstanten...\
+\>", "Text"],
+
+Cell[BoxData[GridBox[{
+   {
+    RowBox[{"Pi", ",", " ", "\[AliasIndicator]pi\[AliasIndicator]"}], 
+    StyleBox["\[Pi]",
+     FontFamily->"Times"]},
+   {"E", 
+    StyleBox[
+     RowBox[{"Eulersche", " ", "Zahl"}],
+     FontFamily->"Times"]},
+   {"I", 
+    StyleBox[
+     RowBox[{"Imagin\[ADoubleDot]re", " ", "Einheit"}],
+     FontFamily->"Times"]},
+   {
+    RowBox[{"Infinity", ",", " ", "\[AliasIndicator]inf\[AliasIndicator]"}], 
+    StyleBox[
+     RowBox[{"Symbol", " ", "f\[UDoubleDot]r", " ", "\[Infinity]"}],
+     FontFamily->"Times"]},
+   {
+    RowBox[{"Degree", ",", " ", "\[Degree]"}], 
+    StyleBox[
+     RowBox[{
+      RowBox[{"Umrechnungsfaktor", " ", "Grad"}], "\[Rule]", 
+      RowBox[{"Rad", ":", " ", 
+       RowBox[{"180", "/", "\[Pi]"}]}]}],
+     FontFamily->"Times"]},
+   {
+    RowBox[{"Integers", ",", " ", "Rationals", ",", "Reals"}], 
+    RowBox[{
+     StyleBox["Zahlenmengen",
+      FontFamily->"Times"], 
+     StyleBox[" ",
+      FontFamily->"Times"], 
+     RowBox[{
+      StyleBox["(",
+       FontFamily->"Times"], 
+      RowBox[{
+       StyleBox["etwa",
+        FontFamily->"Times"], 
+       StyleBox[" ",
+        FontFamily->"Times"], 
+       StyleBox["f\[UDoubleDot]r",
+        FontFamily->"Times"], 
+       StyleBox[" ",
+        FontFamily->"Times"], 
+       StyleBox["Annahmen",
+        FontFamily->"Times"], 
+       StyleBox[" ",
+        FontFamily->"Times"], 
+       StyleBox["in",
+        FontFamily->"Times"], 
+       StyleBox[" ",
+        FontFamily->"Times"], 
+       StyleBox["Simplify",
+        FontFamily->"Courier"]}], 
+      StyleBox[")",
+       FontFamily->"Times"]}]}]}
+  }]], "2ColumnTable"],
+
+Cell["... und Funktionen sind in Mathematica vordefiniert:", "Text"],
+
+Cell[BoxData[GridBox[{
+   {
+    RowBox[{
+     RowBox[{"Sin", "[", "x", "]"}], ",", 
+     RowBox[{"Cos", "[", "x", "]"}], ",", 
+     RowBox[{"Tan", "[", "x", "]"}]}], 
+    StyleBox[
+     RowBox[{"Trigonometrische", " ", "Funktionen"}],
+     FontFamily->"Times"]},
+   {
+    RowBox[{
+     RowBox[{"Sinh", "[", "x", "]"}], ",", 
+     RowBox[{"Cosh", "[", "x", "]"}], ",", 
+     RowBox[{"Tanh", "[", "x", "]"}]}], 
+    StyleBox[
+     RowBox[{"Hyperbolische", " ", "Funktionen"}],
+     FontFamily->"Times"]},
+   {
+    RowBox[{
+     RowBox[{"Log", "[", "x", "]"}], ",", 
+     RowBox[{"Log", "[", 
+      RowBox[{"b", ",", "x"}], "]"}], ",", 
+     RowBox[{"Exp", "[", "x", "]"}]}], 
+    StyleBox[
+     RowBox[{
+      RowBox[{"Logarithmus", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"nat\[UDoubleDot]rlich", "/", "zur"}], " ", "Basis", " ", 
+         "b"}], ")"}]}], ",", " ", "Exponentialfunktion"}],
+     FontFamily->"Times"]},
+   {
+    RowBox[{"Sqrt", "[", "x", "]"}], 
+    StyleBox["Quadratwurzel",
+     FontFamily->"Times"]},
+   {
+    RowBox[{"Random", "[", "]"}], 
+    StyleBox[
+     RowBox[{"Zufallszahl", " ", "zwischen", " ", "0", " ", "und", " ", "1"}],
+     
+     FontFamily->"Times"]}
+  }]], "2ColumnTable"],
+
+Cell[BoxData[
+ RowBox[{"?", "Random"}]], "Input",
+ CellLabel->"In[26]:="],
+
+Cell[BoxData[
+ RowBox[{"?", "Arc*"}]], "Input",
+ CellLabel->"In[27]:="],
+
+Cell[TextData[{
+ "Neben diesen Standardfunktionen existieren viele spezielle Funktionen, wie \
+die Gamma-Funktion ",
+ Cell[BoxData["Gamma"]],
+ ", die Fehlerfunktion ",
+ Cell[BoxData["Erf"]],
+ ", verschiedene Bessel\[Dash]Funktionen (",
+ Cell[BoxData[
+  RowBox[{"BesselJ", ",", "BesselY", ",", "BesselI", ",", "BesselK"}]]],
+ ") oder die Kugelfl\[ADoubleDot]chfenfunktionen ",
+ Cell[BoxData["SphericalHarmonicY"]],
+ ". Mehr Informationen gibt es in der Online\[Dash]Hilfe unter \"special \
+functions\"."
+}], "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3. Fortgeschrittene Anwendungen", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Listen"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Mehrere Objekte k\[ODoubleDot]nnen mithilfe von ",
+ StyleBox["Listen",
+  FontSlant->"Italic"],
+ " zusammengefasst werden. Die Grundrechenarten und viele andere Funktionen \
+sind f\[UDoubleDot]r Listen ",
+ StyleBox["elementweise",
+  FontSlant->"Italic"],
+ " definiert. Dadurch verhalten sich bspw. Listen von Zahlen wie Vektoren \
+oder \"Listen von Listen\" wie Matrizen:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"v", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}]}]], "Input",
+ CellLabel->"In[28]:="],
+
+Cell[BoxData[
+ RowBox[{"w", "=", 
+  RowBox[{
+   RowBox[{"-", "v"}], "*", "2"}]}]], "Input",
+ CellLabel->"In[29]:="],
+
+Cell[BoxData[
+ RowBox[{"w", "+", "v"}]], "Input",
+ CellLabel->"In[30]:="],
+
+Cell[TextData[{
+ "Zum Erstellen neuer Listen ist die Funktion ",
+ Cell[BoxData["Table"]],
+ " h\[ADoubleDot]ufig praktisch: Folgendes Beispiel liefert eine Liste mit f\
+\[UDoubleDot]nf identischen Elementen"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "2", "]"}], ",", 
+   RowBox[{"{", "5", "}"}]}], "]"}]], "Input",
+ CellLabel->"In[31]:="],
+
+Cell[TextData[{
+ "Hier ist ein komplizierteres Beispiel. Das Ergebnis is eine 10\[Times]3\
+\[Dash]Matrix, in der die ",
+ Cell[BoxData["n"]],
+ "\[Dash]te Zeile die Zahlen ",
+ Cell[BoxData[
+  RowBox[{"n", ",", 
+   SuperscriptBox["n", "2"], ",", 
+   SuperscriptBox["n", "3"]}]]],
+ " enth\[ADoubleDot]lt:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"potenzen", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", ",", 
+      RowBox[{"n", "^", "2"}], ",", 
+      RowBox[{"n", "^", "3"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "10"}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->"In[32]:="],
+
+Cell[TextData[{
+ "Alle Befehle, die ganzzahlige Laufvariablen verwenden (vor allem ",
+ Cell[BoxData["Table"]],
+ ", ",
+ Cell[BoxData["Do"]],
+ ", ",
+ Cell[BoxData["Sum"]],
+ ", ",
+ Cell[BoxData["Product"]],
+ "), benutzen daf\[UDoubleDot]r dieselbe Syntax. M\[ODoubleDot]gliche \
+Eingabeformen sind\n{nmax}\t\t\tnmax Wiederholungen ohne Laufvariable (erstes \
+Beispiel)\n{n,nmax}\t\tn geht von 1 bis nmax in Schritten von 1\n\
+{n,nmin,nmax}\tn geht von nmin bis nmax in Schritten von 1 (zweites Beispiel)\
+\n{n,nmin,nmax,dn}\tn geht von nmin bis nmax in Schritten von dn"
+}], "Note"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{"Part", "[", 
+   RowBox[{"x", ",", "n"}], "]"}]]],
+ " liefert den n\[Dash]ten Eintrag einer Liste ",
+ Cell[BoxData["x"]],
+ " zur\[UDoubleDot]ck. F\[UDoubleDot]r eine ",
+ StyleBox["Matrix",
+  FontSlant->"Italic"],
+ " ",
+ Cell[BoxData["x"]],
+ " ist das eine Liste, n\[ADoubleDot]mlich die n\[Dash]te ",
+ StyleBox["Zeile.",
+  FontSlant->"Italic"],
+ " Um die n\[Dash]te ",
+ StyleBox["Spalte",
+  FontSlant->"Italic"],
+ " zu erhalten, muss ",
+ Cell[BoxData["x"]],
+ " vorher transponiert werden:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"qzahlen", "=", 
+  RowBox[{"Part", "[", 
+   RowBox[{
+    RowBox[{"Transpose", "[", "potenzen", "]"}], ",", "2"}], "]"}]}]], "Input",\
+
+ CellLabel->"In[33]:="],
+
+Cell[TextData[{
+ "Statt ",
+ Cell[BoxData["Part"]],
+ " k\[ODoubleDot]nnen auch doppelte eckige Klammern zum Indizieren von Listen \
+verwendet werden. In beiden F\[ADoubleDot]llen hat das erste Element den \
+Index 1 (nicht etwa 0 wie in \"C\")."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"potenzen", "[", 
+    RowBox[{"[", "3", "]"}], "]"}], ",", 
+   RowBox[{"potenzen", "[", 
+    RowBox[{"[", 
+     RowBox[{"4", ",", "3"}], "]"}], "]"}]}], "}"}]], "Input",
+ CellLabel->"In[34]:="],
+
+Cell[TextData[{
+ "Die Funktion ",
+ Cell[BoxData["Apply"]],
+ " wendet eine Funktion auf alle Listenlemente ",
+ StyleBox["auf einmal",
+  FontSlant->"Italic"],
+ " an"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Apply", "[", 
+   RowBox[{"Plus", ",", "qzahlen"}], "]"}], "      ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Summiere", " ", "alle", " ", "Elemente"}], " ", "*)"}]}]], "Input",\
+
+ CellLabel->"In[35]:="],
+
+Cell[TextData[{
+ Cell[BoxData["Map"]],
+ " dagegen wendet eine Funktion auf jedes Listenelement ",
+ StyleBox["einzeln",
+  FontSlant->"Italic"],
+ " an"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"Sin", ",", "qzahlen"}], "]"}]], "Input",
+ CellLabel->"In[36]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Selbstdefinierte Variablen und Funktionen"
+}], "Subsection"],
+
+Cell["\<\
+Symbole k\[ODoubleDot]nnen verwendet werden, um Funktionen zu definieren oder \
+beliebige Ausdr\[UDoubleDot]cke zu speichern. In allen sp\[ADoubleDot]teren \
+Rechnungen wird das Symbol automatisch durch den zugewiesenen Wert ersetzt:\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"rand", "=", 
+  RowBox[{"Random", "[", "]"}], "\t", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "setze", " ", "rand", " ", "auf", " ", "eine", " ", "feste", " ", 
+    "Zufallszahl"}], " ", "*)"}]}]], "Input",
+ CellLabel->"In[37]:="],
+
+Cell[BoxData[
+ RowBox[{"rand", "*", "2"}]], "Input",
+ CellLabel->"In[38]:="],
+
+Cell[TextData[{
+ "Eigene ",
+ StyleBox["Funktionen",
+  FontSlant->"Italic"],
+ " k\[ODoubleDot]nnen auf \[ADoubleDot]hnliche Weise definiert werden:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"randint", "[", 
+   RowBox[{"min_", ",", "max_"}], "]"}], ":=", 
+  RowBox[{"Random", "[", 
+   RowBox[{"Integer", ",", 
+    RowBox[{"{", 
+     RowBox[{"min", ",", "max"}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->"In[39]:="],
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"randint", "[", 
+    RowBox[{"2", ",", "10"}], "]"}], ",", 
+   RowBox[{"{", "10", "}"}]}], "]"}]], "Input",
+ CellLabel->"In[40]:="],
+
+Cell[TextData[{
+ "Zwei Punkte sind in diesem Beispiel wichtig: Der Unterstrich \"",
+ Cell[BoxData["_"]],
+ "\" hinter ",
+ StyleBox["min",
+  FontFamily->"Courier"],
+ " und ",
+ StyleBox["max",
+  FontFamily->"Courier"],
+ " und das \"",
+ Cell[BoxData[":="]],
+ "\" Symbol anstelle von \"",
+ Cell[BoxData["="]],
+ "\" bei der Variablendefinition."
+}], "Text"],
+
+Cell[TextData[{
+ "Variablen werden mit einem einfachen \"",
+ Cell[BoxData["="]],
+ "\" definiert, Funktionen dagegen mit \"",
+ Cell[BoxData[":="]],
+ "\". Auf der ",
+ StyleBox["linken",
+  FontSlant->"Italic"],
+ " Seite der Zuweisung muss an die Argumentnamen einer Funktion ein \
+Unterstrich angeh\[ADoubleDot]ngt werden."
+}], "Note"],
+
+Cell["\<\
+Ungew\[UDoubleDot]nschte Definitionen k\[ODoubleDot]nnen wieder gel\
+\[ODoubleDot]scht werden\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "v", "]"}], "\t\t", 
+  RowBox[{"(*", " ", 
+   RowBox[{"ein", " ", "Symbol", " ", "l\[ODoubleDot]schen"}], " ", 
+   "*)"}]}]], "Input",
+ CellLabel->"In[41]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", 
+   RowBox[{"r1", ",", "r2"}], "]"}], "\t", 
+  RowBox[{"(*", " ", 
+   RowBox[{"mehrere", " ", "Symbole", " ", "l\[ODoubleDot]schen"}], " ", 
+   "*)"}]}]], "Input",
+ CellLabel->"In[42]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "alle", " ", "selbstdefinierten", " ", "Symbole", " ", 
+    "l\[ODoubleDot]schen"}], " ", "*)"}]}]], "Input",
+ CellLabel->"In[43]:="],
+
+Cell[TextData[{
+ "Eine spezielle Notation f\[UDoubleDot]r Funktionen ist im Umgang mit \
+Operationen wie ",
+ Cell[BoxData["Map"]],
+ " oder ",
+ Cell[BoxData["Nest"]],
+ " oft sehr praktisch. ",
+ StyleBox["Pure functions",
+  FontSlant->"Italic"],
+ " sind Funktionen ohne Namen, die \[UDoubleDot]berall dort direkt eingef\
+\[UDoubleDot]gt werden k\[ODoubleDot]nnen, wo sonst ein Funktionsname \
+erwartet w\[UDoubleDot]rde. Statt"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], "=", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], "^", "2"}]}]], "Input",
+ CellLabel->"In[44]:="],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Map", "[", 
+   RowBox[{"f", ",", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", "10"}], "]"}]}], "]"}], "]"}]], "Input",
+ CellLabel->"In[45]:="],
+
+Cell["\<\
+kann man mit pure functions auch k\[UDoubleDot]rzer schreiben\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sin", "[", "#", "]"}], "^", "2"}], "&"}], ",", 
+    RowBox[{"Range", "[", 
+     RowBox[{"1", ",", "10"}], "]"}]}], "]"}], "]"}]], "Input",
+ CellLabel->"In[46]:="],
+
+Cell[TextData[{
+ "Hierbei werden die Funktionsargumente mit ",
+ Cell[BoxData["#"]],
+ ", ",
+ Cell[BoxData["#2"]],
+ ", ",
+ Cell[BoxData["#3"]],
+ ", \[Ellipsis] bezeichnet und die Definition der Funktion mit einem \
+Ampersand \"",
+ Cell[BoxData["&"]],
+ "\" beendet."
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Symbolische Mathematik, Umformen von Ausdr\[UDoubleDot]cken"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Symbole, denen noch kein Wert zugewiesen wurde, verhalten sich wie ",
+ StyleBox["Unbekannte",
+  FontSlant->"Italic"],
+ ". Sie k\[ODoubleDot]nnen verwendet werden, um allgemeine Berechnungen \
+vorzunehmen"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Sum", "[", 
+  RowBox[{
+   RowBox[{"q", "^", "n"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "Infinity"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[47]:="],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"Tan", "[", 
+    RowBox[{"c", "*", "y"}], "]"}], ",", "y"}], "]"}]], "Input",
+ CellLabel->"In[48]:="],
+
+Cell[TextData[{
+ "Einige offensichtliche Vereinfachungen werden automatisch vorgenommen, in \
+komplizierteren F\[ADoubleDot]llen muss man ",
+ Cell[BoxData["Simplify"]],
+ " verwenden"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], "^", "2"}], "+", 
+   RowBox[{
+    RowBox[{"Cos", "[", "x", "]"}], "^", "2"}]}], "]"}]], "Input",
+ CellLabel->"In[49]:="],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"a", "^", "2"}], "-", 
+     RowBox[{"b", "^", "2"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{"a", "-", "b"}], ")"}]}], "]"}]], "Input",
+ CellLabel->"In[50]:="],
+
+Cell[TextData[{
+ "Manche symbolischen Ausdr\[UDoubleDot]cke k\[ODoubleDot]nnen nur unter \
+bestimmten Annahmen vereinfacht werden. Zum Beispiel gilt ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"Sqrt", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], "\[Equal]", "x"}]]],
+ " nur f\[UDoubleDot]r reelle ",
+ Cell[BoxData["x"]],
+ ". In solchen F\[ADoubleDot]llen m\[UDoubleDot]ssen die Annahmen explizit an \
+",
+ Cell[BoxData["Simplify"]],
+ " \[UDoubleDot]bergeben werden:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{"Sqrt", "[", 
+   RowBox[{"x", "^", "2"}], "]"}], "]"}]], "Input",
+ CellLabel->"In[51]:="],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"Sqrt", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", 
+   RowBox[{"x", "<", "0"}]}], "]"}]], "Input",
+ CellLabel->"In[52]:="],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", "+", 
+     RowBox[{"2", "Pi", " ", "n"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Element]", "Integers"}]}], "]"}]], "Input",
+ CellLabel->"In[53]:="],
+
+Cell[TextData[{
+ "Manchmal findet ",
+ Cell[BoxData["FullSimplify"]],
+ " zus\[ADoubleDot]tzliche Vereinfachungen, die ",
+ Cell[BoxData["Simplify"]],
+ " nicht entdeckt"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"I", "/", "4"}], ")"}], "/", 
+    RowBox[{"E", "^", 
+     RowBox[{"(", 
+      RowBox[{"2", "*", "I", "*", "x"}], ")"}]}]}], "-", 
+   RowBox[{
+    RowBox[{"I", "/", "4"}], "*", 
+    RowBox[{"E", "^", 
+     RowBox[{"(", 
+      RowBox[{"2", "*", "I", "*", "x"}], ")"}]}]}]}], "]"}]], "Input",
+ CellLabel->"In[54]:="],
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", "%", "]"}]], "Input",
+ CellLabel->"In[55]:="],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{"Sqrt", "[", 
+   RowBox[{"x", "^", "2"}], "]"}]]],
+ " konnte in obigem Beispiel nicht vereinfacht werden, da ",
+ Cell[BoxData["x"]],
+ " als komplexe Variable angenommen wurde, f\[UDoubleDot]r die die gew\
+\[ODoubleDot]hnlichen Potenzregeln nur eingeschr\[ADoubleDot]nkt gelten. Die \
+Anwendung dieser Potenzregeln kann mit ",
+ Cell[BoxData["PowerExpand"]],
+ " erzwungen werden"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"PowerExpand", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    SqrtBox[
+     RowBox[{"x", "^", "2"}]], ",", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a", "*", "b"}], ")"}], "^", "c"}], ",", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a", "^", "b"}], ")"}], "^", "c"}]}], "}"}], "]"}]], "Input",
+ CellLabel->"In[56]:="],
+
+Cell[TextData[{
+ "Symbole in Ausdr\[UDoubleDot]cken k\[ODoubleDot]nnen mithilfe des ",
+ Cell[BoxData["/."]],
+ " Operators ersetzt werden (",
+ StyleBox["unentbehrlich!",
+  FontWeight->"Bold"],
+ ")"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  SqrtBox["a"], "/.", 
+  RowBox[{"a", "\[Rule]", 
+   RowBox[{
+    RowBox[{"x", "^", "2"}], "+", 
+    RowBox[{"y", "^", "2"}]}]}]}]], "Input",
+ CellLabel->"In[57]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "+", "b"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"a", "\[Rule]", 
+     RowBox[{"b", "^", "2"}]}], ",", 
+    RowBox[{"b", "\[Rule]", 
+     RowBox[{"c", "^", "3"}]}]}], "}"}]}]], "Input",
+ CellLabel->"In[58]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Schleifen und If-Anweisungen"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Die wichtigsten aus imperativen Programmiersprachen bekannten \
+Schleifentypen sind auch in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " vorhanden. (Die von ",
+ Cell[BoxData["Do"]],
+ " verwendeten Z\[ADoubleDot]hlvariablen wurden im Abschnitt \"Listen\" erkl\
+\[ADoubleDot]rt.)"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{"Print", "[", "\"\<Hallo Welt!\>\"", "]"}], ",", 
+   RowBox[{"{", "5", "}"}]}], "]"}]], "Input",
+ CellLabel->"In[59]:="],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"liste", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{"liste", "=", 
+    RowBox[{"Append", "[", 
+     RowBox[{"liste", ",", " ", 
+      RowBox[{"Prime", "[", "n", "]"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1000", ",", "1005"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", "liste"}], "Input",
+ CellLabel->"In[60]:="],
+
+Cell[TextData[{
+ "Schleifen k\[ODoubleDot]nnen auch mit ",
+ Cell[BoxData["For"]],
+ " und ",
+ Cell[BoxData["While"]],
+ " formuliert werden."
+}], "Text"],
+
+Cell[TextData[{
+ "H\[ADoubleDot]ufig ist es einfacher und schneller anstelle dieser \
+allgemeinen Schleifen spezialisierte Operationen wie ",
+ Cell[BoxData["Table"]],
+ ", ",
+ Cell[BoxData["Map"]],
+ ", ",
+ Cell[BoxData[
+  RowBox[{"Nest", Cell[""]}]]],
+ ", oder ",
+ Cell[BoxData["Apply"]],
+ " zu verwenden"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Prime", "[", "i", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "1000", ",", "1005"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[63]:="],
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"Prime", ",", 
+   RowBox[{"Range", "[", 
+    RowBox[{"1000", ",", "1005"}], "]"}]}], "]"}]], "Input",
+ CellLabel->"In[64]:="],
+
+Cell[BoxData[
+ RowBox[{"Nest", "[", 
+  RowBox[{"Sin", ",", "x", ",", "3"}], "]"}]], "Input",
+ CellLabel->"In[65]:="],
+
+Cell[BoxData[
+ RowBox[{"Nest", "[", 
+  RowBox[{"Sin", ",", "1.2", ",", "3"}], "]"}]], "Input",
+ CellLabel->"In[66]:="],
+
+Cell[BoxData[
+ RowBox[{"NestList", "[", 
+  RowBox[{"Sin", ",", "x", ",", "3"}], "]"}]], "Input",
+ CellLabel->"In[67]:="],
+
+Cell[TextData[{
+ Cell[BoxData["If"]],
+ "-Anweisung funktionieren ganz \[ADoubleDot]hnlich wie in anderen \
+Programmiersprachen auch"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"wuerfel", "[", "]"}], ":=", 
+  RowBox[{"Random", "[", 
+   RowBox[{"Integer", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "6"}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->"In[68]:="],
+
+Cell[BoxData[
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"wuerfel", "[", "]"}], "\[Equal]", 
+    RowBox[{"wuerfel", "[", "]"}]}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", "\"\<Pasch\>\"", "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Print", "[", "\"\<Kein Pasch\>\"", "]"}]}], "]"}]], "Input",
+ CellLabel->"In[69]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Eingabe von Formeln"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Die Verwendung zweidimensionaler Formeln (etwa ",
+ Cell[BoxData[
+  SqrtBox["2"]]],
+ " anstelle von ",
+ Cell[BoxData[
+  RowBox[{"Sqrt", "[", "2", "]"}]]],
+ ") und mathematischer Symbole kann die Notation manchmal merklich \
+vereinfachen. F\[UDoubleDot]r die gebr\[ADoubleDot]uchlichsten Symbole stehen \
+im File\[Dash]Men\[UDoubleDot] einige ",
+ StyleBox["Paletten",
+  FontSlant->"Italic"],
+ " zur Verf\[UDoubleDot]gung (in den meisten F\[ADoubleDot]llen reicht \
+\"BasicInput\"). Zwischen den Platzhaltern \[SelectionPlaceholder] und \
+\[Placeholder] kann mit der \[TabKey]-Taste hin- und hergewechselt werden."
+}], "Text",
+ CellMargins->{{Inherited, Inherited}, {0, Inherited}},
+ CellBracketOptions->{"Color"->RGBColor[0, 0.2, 1]},
+ InputAutoReplacements->{"TeX" -> StyleBox[
+     RowBox[{"T", 
+       AdjustmentBox[
+       "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, BoxBaselineShift -> 
+        0.5], "X"}]], "LaTeX" -> StyleBox[
+     RowBox[{"L", 
+       StyleBox[
+        AdjustmentBox[
+        "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, BoxBaselineShift -> -0.2],
+         FontSize -> Smaller], "T", 
+       AdjustmentBox[
+       "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, BoxBaselineShift -> 
+        0.5], "X"}]], "mma" -> "Mathematica", "Mma" -> "Mathematica", "MMA" -> 
+   "Mathematica"},
+ ParagraphSpacing->{0, 8},
+ ScriptMinSize->9,
+ CounterIncrements->"Text"],
+
+Cell[TextData[{
+ "Folgende Tabelle enth\[ADoubleDot]lt einige n\[UDoubleDot]tzliche \
+Tastenkombinationen. Das Symbol \"\[AliasIndicator]\" steht dabei f\
+\[UDoubleDot]r die \[EscapeKey]-Taste, das \"+\" deutet an, dass die Tasten \
+",
+ StyleBox["gleichzeitig",
+  FontSlant->"Italic"],
+ " zu dr\[UDoubleDot]cken sind."
+}], "Text"],
+
+Cell[BoxData[GridBox[{
+   {"\[TabKey]", 
+    StyleBox[
+     RowBox[{"zum", " ", "n\[ADoubleDot]chsten", " ", "Platzhalten", " ", 
+      RowBox[{"(", 
+       RowBox[{
+       "\[SelectionPlaceholder]", " ", "oder", " ", "\[Placeholder]"}], ")"}],
+       " ", "springen"}],
+     FontFamily->"Times"]},
+   {
+    RowBox[{"\[ControlKey]", "+", "2"}], 
+    RowBox[{
+     StyleBox["Wurzel",
+      FontFamily->"Times"], 
+     StyleBox["-",
+      FontFamily->"Times"], 
+     RowBox[{
+      StyleBox["Zeichen",
+       FontFamily->"Times"], 
+      StyleBox[" ",
+       FontFamily->"Times"], 
+      StyleBox["einf\[UDoubleDot]gen",
+       FontFamily->"Times"], 
+      StyleBox[" ",
+       FontFamily->"Times"], 
+      SqrtBox["a"]}]}]},
+   {
+    RowBox[{"\[ControlKey]", "+", "\[ShiftKey]", "+", "6"}], 
+    RowBox[{
+     StyleBox["Bruch",
+      FontFamily->"Times"], 
+     StyleBox[" ",
+      FontFamily->"Times"], 
+     StyleBox["einf\[UDoubleDot]gen",
+      FontFamily->"Times"], 
+     StyleBox[" ",
+      FontFamily->"Times"], 
+     FractionBox[
+      StyleBox["a",
+       FontFamily->"Times"], "b"]}]},
+   {
+    RowBox[{"\[ControlKey]", "+", "^"}], 
+    RowBox[{
+     StyleBox["Exponenten",
+      FontFamily->"Times"], 
+     StyleBox[" ",
+      FontFamily->"Times"], 
+     StyleBox["einf\[UDoubleDot]gen",
+      FontFamily->"Times"], 
+     StyleBox[" ",
+      FontFamily->"Times"], 
+     SuperscriptBox[
+      StyleBox["a",
+       FontFamily->"Times"], "b"]}]},
+   {
+    RowBox[{"\[ControlKey]", "+", "\[SpaceKey]"}], 
+    RowBox[{
+    "zur", " ", "n\[ADoubleDot]chsth\[ODoubleDot]heren", " ", 
+     "Schachtelungsebene", " ", "gehen"}]},
+   {
+    RowBox[{"\[AliasIndicator]a\[AliasIndicator]", ",", "...", ",", " ", 
+     RowBox[{"\[AliasIndicator]z", "\[AliasDelimiter]"}]}], 
+    StyleBox[
+     RowBox[{"\[Alpha]", ",", "...", ",", " ", "\[Zeta]"}],
+     FontFamily->"Times"]},
+   {
+    RowBox[{"\[AliasIndicator]inf", "\[AliasDelimiter]"}], 
+    StyleBox["\[Infinity]",
+     FontFamily->"Times"]},
+   {"\[AliasIndicator]elem\[AliasIndicator]", "\[Element]"},
+   {"->", "\[Rule]"}
+  }]], "2ColumnTable",
+ FontFamily->"Times"],
+
+Cell["Einen Ausdruck wie", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{
+    RowBox[{"\[Pi]", 
+     SqrtBox[
+      RowBox[{"x", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", "x"}], ")"}]}]]}], "+", "y"}]], ";"}]], "Input",
+ CellLabel->"In[70]:="],
+
+Cell["\<\
+erh\[ADoubleDot]lt man also entweder mithilfe der Paletten und \[TabKey], \
+oder durch die Tastenfolge 1, \[ControlKey]+\[ShiftKey]+6, \[EscapeKey], pi, \
+\[EscapeKey], \[ControlKey]+2, x(1-x), \[ControlKey]+\[SpaceKey], +y.\
+\>", "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4. Analysis", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Differentiation und Integration"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Ableiten nach einer Unbekannten ",
+ Cell[BoxData["x"]]
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{"x", " ", 
+    RowBox[{"Log", "[", "x", "]"}]}], ",", "x"}], "]"}]], "Input",
+ CellLabel->"In[71]:="],
+
+Cell[TextData[{
+ "Zweifache Ableitung nach ",
+ Cell[BoxData["x"]]
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[72]:="],
+
+Cell[TextData[{
+ "Gemischte Ableitung ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox["\[PartialD]", "y"], 
+   SubscriptBox["\[PartialD]", "x"]}]]]
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", " ", "y"}], "]"}], ",", "x", ",", "y"}], "]"}]], "Input",
+ CellLabel->"In[73]:="],
+
+Cell["Unbestimmtes Integral...", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"1", "+", 
+     RowBox[{"x", "^", "2"}]}]], ",", "x"}], "]"}]], "Input",
+ CellLabel->"In[74]:="],
+
+Cell[TextData[{
+ "und bestimmtes Integral werden mit ",
+ Cell[BoxData["Integrate"]],
+ " berechnet. Im folgenden Fall ist das Ergebnis allerdings nicht geschlossen \
+darstellbar:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"Sin", "[", "x", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[75]:="],
+
+Cell["\<\
+Numerische Integration l\[ODoubleDot]st das Problem\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"NIntegrate", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"Sin", "[", "x", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[76]:="],
+
+Cell["\<\
+Mehrfache Integrale lasssen sich einfach durch die Angabe mehrere \
+Integrationsvariablen berechnen\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"x", "^", "2"}], "+", 
+       RowBox[{"y", "^", "2"}]}], ")"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "x1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", "0", ",", "x2"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[77]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Reihenentwicklungen"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Analytische Funktionen k\[ODoubleDot]nnen mit ",
+ Cell[BoxData["Series"]],
+ " in eine Potenzreihe entwickelt werden. Neben dem Entwicklungspunkt muss au\
+\[SZ]erdem noch angegeben werden, bis zu welcher Ordnung entwickelt werden \
+soll (hier 6 bzw. 4)"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "6"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[78]:="],
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"Log", "[", 
+    RowBox[{"x", "+", "1"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[79]:="],
+
+Cell["\<\
+Mit Potenzreihen kann in gewissen Grenzen wie mit anderen \
+Ausdr\[UDoubleDot]cken gerechnet werden\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"%", "+", "%%"}]], "Input",
+ CellLabel->"In[80]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Summen, Produkte und Grenzwerte"
+}], "Subsection"],
+
+Cell["\<\
+Zus\[ADoubleDot]tzlich k\[ODoubleDot]nnen auch Grenzwerte, (unendliche) \
+Reihen und (unendliche) Produkte ausgewertet werden\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], "/", "x"}], ",", 
+   RowBox[{"x", "\[Rule]", "0"}]}], "]"}]], "Input",
+ CellLabel->"In[81]:="],
+
+Cell[BoxData[
+ RowBox[{"Sum", "[", 
+  RowBox[{
+   RowBox[{"Binomial", "[", 
+    RowBox[{"n", ",", "m"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "0", ",", "n"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[82]:="],
+
+Cell[BoxData[
+ RowBox[{"Sum", "[", 
+  RowBox[{
+   RowBox[{"1", "/", 
+    RowBox[{"n", "^", "2"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[83]:="],
+
+Cell[BoxData[
+ RowBox[{"Product", "[", 
+  RowBox[{
+   RowBox[{"1", "+", 
+    RowBox[{"1", "/", "k"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "1", ",", "n"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[84]:="],
+
+Cell[BoxData[
+ RowBox[{"Product", "[", 
+  RowBox[{
+   RowBox[{"1", "+", 
+    RowBox[{"1", "/", 
+     RowBox[{"k", "^", "2"}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[85]:="]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5. L\[ODoubleDot]sen von Gleichungen", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Gew\[ODoubleDot]hnliche Gleichungen"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Um die L\[ODoubleDot]sung einer beliebigen Gleichung zu finden, steht mit \
+",
+ Cell[BoxData["FindRoot"]],
+ " ein numerischer Gleichungsl\[ODoubleDot]ser zur Verf\[UDoubleDot]gung"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], "\[Equal]", 
+    RowBox[{"x", "^", "2"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[86]:="],
+
+Cell[TextData[{
+ "Man kann den Suchbereich von ",
+ Cell[BoxData["FindRoot"]],
+ " auf ein beliebiges Intervall einschr\[ADoubleDot]nken, indem man zus\
+\[ADoubleDot]tzlich zum Startwert die Intervallgrenzen \[UDoubleDot]bergibt \
+(obwohl das meistens nicht n\[ODoubleDot]tig ist):"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Exp", "[", "x", "]"}], "\[Equal]", 
+    RowBox[{"5", 
+     RowBox[{"x", "^", "3"}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "0", ",", "2"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[87]:="],
+
+Cell[TextData[{
+ "Im Gegensatz zu ",
+ Cell[BoxData["FindRoot"]],
+ " versucht ",
+ Cell[BoxData["Solve"]],
+ ", die Gleichung aufzul\[ODoubleDot]sen und eine allgemeine \
+L\[ODoubleDot]sung zu bestimmen. Wo das nicht geht (etwa im ersten Beispiel \
+oben) gibt es eine Fehlermeldung, sonst eine Liste der L\[ODoubleDot]sungen"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "^", "2"}], "+", 
+     RowBox[{"p", " ", "x"}], "+", "q"}], "\[Equal]", "0"}], ",", "x"}], 
+  "]"}]], "Input",
+ CellLabel->"In[88]:="],
+
+Cell[TextData[{
+ "Auch wenn ",
+ Cell[BoxData["Solve"]],
+ " alle L\[ODoubleDot]sungen findet, sind diese oft nur numerisch \
+darstellbar"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "^", "6"}], "+", "x"}], "==", "10"}], ",", "x"}], 
+  "]"}]], "Input",
+ CellLabel->"In[89]:="],
+
+Cell[BoxData[
+ RowBox[{"N", "[", "%", "]"}]], "Input",
+ CellLabel->"In[90]:="],
+
+Cell[TextData[{
+ "Stattdessen kann man auch gleich die numerische Variante von ",
+ Cell[BoxData["Solve"]],
+ " benutzen"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"NSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "^", "6"}], "+", "x"}], "\[Equal]", "10"}], ",", "x"}], 
+  "]"}]], "Input",
+ CellLabel->"In[91]:="],
+
+Cell["\<\
+Die vorgestellten Funktionen sind auch in der Lage, Gleichungssysteme in \
+mehreren Variablesn zu l\[ODoubleDot]sen. Ein Beispiel\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"FindRoot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sin", "[", "x", "]"}], "\[Equal]", 
+      RowBox[{"Cos", "[", "x", "]"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"x", "^", "2"}], "+", 
+       RowBox[{"y", "^", "2"}]}], "\[Equal]", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", ".5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", ".2"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[92]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Differentialgleichungen"
+}], "Subsection"],
+
+Cell["\<\
+Schlie\[SZ]lich k\[ODoubleDot]nnen auch Differentialgleichungen und Systemen \
+von Differentialgleichungen sowohl exakt als auch numerisch \
+gel\[ODoubleDot]st werden.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "''"}], "[", "x", "]"}], "==", 
+    RowBox[{
+     RowBox[{"\[Omega]", "^", "2"}], " ", 
+     RowBox[{"y", "[", "x", "]"}]}]}], ",", 
+   RowBox[{"y", "[", "x", " ", "]"}], ",", "x"}], "]"}]], "Input",
+ CellLabel->"In[93]:="],
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "'"}], "[", "0", "]"}], "\[Equal]", "a"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "''"}], "[", "x", "]"}], "\[Equal]", 
+      RowBox[{
+       RowBox[{"\[Omega]", "^", "2"}], 
+       RowBox[{"y", "[", "x", "]"}]}]}]}], "}"}], ",", 
+   RowBox[{"y", "[", "x", "]"}], ",", "x"}], "]"}]], "Input",
+ CellLabel->"In[94]:="],
+
+Cell[TextData[{
+ "In dieser Form wird eine Ersetzungsregel f\[UDoubleDot]r ",
+ Cell[BoxData[
+  RowBox[{"y", "[", "x", "]"}]]],
+ " zur\[UDoubleDot]ckgeliefert. Ist man auch an Ableitungen von ",
+ Cell[BoxData["y"]],
+ " interessiert, ist vorteilhaft nicht nach ",
+ Cell[BoxData[
+  RowBox[{"y", "[", "x", "]"}]]],
+ ", sondern nach ",
+ Cell[BoxData["y"]],
+ " aufzul\[ODoubleDot]sen:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"y", "[", "x", "]"}], ",", 
+    RowBox[{
+     RowBox[{"y", "'"}], "[", "x", "]"}]}], "}"}], "/.", 
+  RowBox[{"DSolve", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "'"}], "[", "0", "]"}], "\[Equal]", "a"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "''"}], "[", "x", "]"}], "\[Equal]", 
+       RowBox[{
+        RowBox[{"\[Omega]", "^", "2"}], 
+        RowBox[{"y", "[", "x", "]"}]}]}]}], "}"}], ",", "y", ",", "x"}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[95]:="],
+
+Cell[TextData[{
+ "Auch f\[UDoubleDot]r Differentialgleichungen k\[ODoubleDot]nnen numerische \
+L\[ODoubleDot]sungen gesucht werden. ",
+ Cell[BoxData["NDSolve"]],
+ " berechnet einige L\[ODoubleDot]sungspunkte im angegebenen Intervall, die \
+von der zur\[UDoubleDot]ckgelieferten ",
+ Cell[BoxData["InterpolatingFunction"]],
+ " interpoliert werden."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"NDSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"y", "'"}], "[", "x", "]"}], "\[Equal]", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"x", "*", 
+        RowBox[{"y", "[", "x", "]"}]}], "]"}]}], ",", 
+     RowBox[{
+      RowBox[{"y", "[", "0", "]"}], "\[Equal]", "1"}]}], "}"}], ",", 
+   RowBox[{"y", "[", "x", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "5"}], ",", "5"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[96]:="],
+
+Cell["\<\
+Mit folgender Ersetzung kann man dieses Ergebnis wie eine \
+regul\[ADoubleDot]re Funktion benutzen (etwa zum Plotten).\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "[", "x_", "]"}], ":=", 
+  RowBox[{"Evaluate", "[", 
+   RowBox[{
+    RowBox[{"y", "[", "x", "]"}], "/.", "%"}], "]"}]}]], "Input",
+ CellLabel->"In[97]:="],
+
+Cell["\<\
+In \[ADoubleDot]hnlicher Weise lassen sich auch partielle \
+Differentialgleichungen l\[ODoubleDot]sen. Mehr Informationen dazu gibt es \
+(wieder einmal) in der Online-Hilfe.\
+\>", "Text"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["6. Lineare Algebra", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Matrizen und Vektoren"
+}], "Subsection"],
+
+Cell["\<\
+Wie bereits erl\[ADoubleDot]utert, verhalten sich Listen weitgehend wie \
+Vektoren, da alle Grundrechenarten f\[UDoubleDot]r sie elementweise definiert \
+sind. Matrizen werden als Listen von Listen dargestellt\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"{", 
+    RowBox[{"a1", ",", "a2", ",", "a3"}], "}"}]}], ";", " ", 
+  RowBox[{"b", "=", 
+   RowBox[{"{", 
+    RowBox[{"b1", ",", "b2", ",", "b3"}], "}"}]}], ";"}]], "Input",
+ CellLabel->"In[98]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", ".", "b"}], "\t", 
+  RowBox[{"(*", " ", "Skalarprodukt", " ", "*)"}]}]], "Input",
+ CellLabel->"In[99]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Cross", "[", 
+   RowBox[{"a", ",", "b"}], "]"}], "\t", 
+  RowBox[{"(*", " ", "Kreuzprodukt", " ", "*)"}]}]], "Input",
+ CellLabel->"In[100]:="],
+
+Cell[BoxData[
+ RowBox[{"m", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"2", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "3", ",", 
+      RowBox[{"-", "1"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "3"}], "}"}]}], "}"}]}]], "Input",
+ CellLabel->"In[101]:="],
+
+Cell[BoxData[
+ RowBox[{"%", "//", "MatrixForm", "\t\t", 
+  RowBox[{"(*", " ", 
+   RowBox[{"\[CapitalADoubleDot]quivalent", " ", "zu", " ", 
+    RowBox[{"MatrixForm", "[", "%", "]"}]}], " ", "*)"}]}]], "Input",
+ CellLabel->"In[102]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", ".", "a"}], "\t\t\t", 
+  RowBox[{"(*", " ", 
+   RowBox[{"Lineare", " ", "Abbildung", " ", "eines", " ", "Vektors"}], " ", 
+   "*)"}]}]], "Input",
+ CellLabel->"In[103]:="],
+
+Cell[TextData[{
+ "Um Matrizen zu erstellen gibt es nat\[UDoubleDot]rlich ",
+ Cell[BoxData["Table"]],
+ ", aber zus\[ADoubleDot]tzlich noch einige spezielle Funktionen. Eine 3\
+\[Times]3 Matrix erstellen..."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"b", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"i", "*", "j"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", "3"}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->"In[104]:="],
+
+Cell["\<\
+... oder eine 3\[Times]3 Diagonalmatrix...\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"d", "=", 
+  RowBox[{"DiagonalMatrix", "[", 
+   RowBox[{"{", 
+    RowBox[{"x1", ",", "x2", ",", "x3"}], "}"}], "]"}]}]], "Input",
+ CellLabel->"In[105]:="],
+
+Cell["\<\
+... oder eine 3\[Times]3 Einheitsmatrix\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"IdentityMatrix", "[", "3", "]"}]], "Input",
+ CellLabel->"In[106]:="],
+
+Cell[TextData[{
+ Cell[BoxData["b"]],
+ " ist symmetrisch, stimmt als mit der eigenen Transponierten \
+\[UDoubleDot]berein"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Transpose", "[", "b", "]"}], "\[Equal]", "b"}]], "Input",
+ CellLabel->"In[107]:="],
+
+Cell["\<\
+Andere klassische Funktionen einer Matrix sind die Determinante und die \
+Inverse\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"Det", "[", "d", "]"}]], "Input",
+ CellLabel->"In[108]:="],
+
+Cell[BoxData[
+ RowBox[{"Inverse", "[", "d", "]"}]], "Input",
+ CellLabel->"In[109]:="],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{"a", ",", "b", ",", "d", ",", "m"}], "]"}]], "Input",
+ CellLabel->"In[110]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Lineare Gleichungssysteme"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Lineare Gleichungssysteme k\[ODoubleDot]nnen nat\[UDoubleDot]rlich mit den \
+allgemeinen L\[ODoubleDot]sungsverfahren von ",
+ Cell[BoxData["Solve"]],
+ " aufgel\[ODoubleDot]st werden. Das ist der praktischere Weg, wenn bereits \
+die Gleichungen selbst vorliegen. Wenn dagegen nur die Matrix ",
+ Cell[BoxData["m"]],
+ " und der Vektor ",
+ Cell[BoxData["b"]],
+ " in der Gleichung ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"m", ".", "x"}], "\[Equal]", "b"}]]],
+ " bekannt sind, ist es einfacher, die Funktion ",
+ Cell[BoxData["LinearSolve"]],
+ " zu verwenden:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "4"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[111]:="],
+
+Cell[TextData[{
+ "F\[UDoubleDot]r homogene LGSe kann man auch zu ",
+ Cell[BoxData["NullSpace"]],
+ " greifen, um eine Basis des Kerns der Matrix zu ermitteln"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"NullSpace", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"2", ",", 
+      RowBox[{"-", "2"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", 
+      RowBox[{"-", "4"}]}], "}"}]}], "}"}], "]"}]], "Input",
+ CellLabel->"In[112]:="],
+
+Cell[TextData[{
+ "Muss ein lineares Gleichungssystem mehrfach f\[UDoubleDot]r verschiedene ",
+ Cell[BoxData["b"]],
+ " aber konstantes ",
+ Cell[BoxData["m"]],
+ " gel\[ODoubleDot]st werden, kann es effizienter sein, zun\[ADoubleDot]chst \
+eine LU-Dekomposition der Matrix durchzuf\[UDoubleDot]hren:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"lu", "=", 
+  RowBox[{"LUDecomposition", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "4"}], "}"}]}], "}"}], "]"}]}]], "Input",
+ CellLabel->"In[113]:="],
+
+Cell[BoxData[
+ RowBox[{"LUBackSubstitution", "[", 
+  RowBox[{"lu", ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b"}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[114]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Eigenwerte und Eigenvektoren"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Zur Berechnung der Eigenwerte und -vektoren einer Matrix stellt Mathematica \
+die Funktionen ",
+ Cell[BoxData["Eigenvalues"]],
+ " und ",
+ Cell[BoxData["Eigenvectors"]],
+ " zur Verf\[UDoubleDot]gung. F\[UDoubleDot]r eine ",
+ Cell[BoxData[
+  RowBox[{"n", "\[Times]", "n"}]]],
+ " Matrix liefert ",
+ Cell[BoxData["Eigenvalues"]],
+ " immer ",
+ Cell[BoxData["n"]],
+ " (nicht unbedingt verschiedene) Zahlen, w\[ADoubleDot]hrend ",
+ Cell[BoxData["Eigenvectors"]],
+ " bei weniger als ",
+ Cell[BoxData["n"]],
+ " ",
+ StyleBox["unabh\[ADoubleDot]ngigen",
+  FontSlant->"Italic"],
+ " Eigenvektoren (wie im folgenden Beispiel) Nullvektoren anh\[ADoubleDot]ngt."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "3", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "3"}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellLabel->"In[115]:="],
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "m", "]"}]], "Input",
+ CellLabel->"In[116]:="],
+
+Cell[BoxData[
+ RowBox[{"Eigenvectors", "[", "m", "]"}]], "Input",
+ CellLabel->"In[117]:="],
+
+Cell[TextData[{
+ Cell[BoxData["Eigensystem"]],
+ " berechnet gleichzeitig die Eigenwerte und -vektoren einer Matrix und gibt \
+sie als Liste zur\[UDoubleDot]ck."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"ew", ",", "ev"}], "}"}], "=", 
+  RowBox[{"Eigensystem", "[", "m", "]"}]}]], "Input",
+ CellLabel->"In[118]:="]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5. Grafik", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Zweidimensional"
+}], "Subsection"],
+
+Cell[TextData[{
+ Cell[BoxData["Plot"]],
+ " stellt eine Funktion auf einem reellen Intervall dar\[Ellipsis]"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["x", "2"], "/", 
+    RowBox[{"Log", "[", "x", "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.446718360984375*^9},
+ CellLabel->"In[119]:="],
+
+Cell[TextData[{
+ "\[Ellipsis] oder auch mehrere Funktionen. Das folgende Beispiel zeigt auch, \
+wie man eine ",
+ StyleBox["Option",
+  FontSlant->"Italic"],
+ " an ",
+ Cell[BoxData["Plot"]],
+ " \[UDoubleDot]bergibt (hier ",
+ Cell[BoxData[
+  RowBox[{"Frame", "\[Rule]", "True"}]]],
+ ")."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"BesselJ", "[", 
+      RowBox[{"0", ",", "x"}], "]"}], ",", 
+     RowBox[{"BesselJ", "[", 
+      RowBox[{"1", ",", "x"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "10"}], "}"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.446718364953125*^9},
+ CellLabel->"In[120]:="],
+
+Cell[TextData[{
+ "Parametrische Kurven in der Ebene werden von ",
+ Cell[BoxData["ParametricPlot"]],
+ " dargestellt"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"ParametricPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Cos", "[", "t", "]"}], "/", "t"}], ",", 
+     RowBox[{
+      RowBox[{"Sin", "[", "t", "]"}], "/", "t"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"3", "Pi"}]}], "}"}], ",", 
+   RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.4467185095*^9},
+ CellLabel->"In[121]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Dreidimensional"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Eine Funktion ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox["\[DoubleStruckCapitalR]", "2"], "\[Rule]", 
+   "\[DoubleStruckCapitalR]"}]]],
+ " kann mit ",
+ Cell[BoxData["Plot3D"]],
+ " veranschaulicht werden"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Plot3D", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", 
+      RowBox[{"2", 
+       SuperscriptBox["y", "2"]}]}], ")"}], 
+    SuperscriptBox["E", 
+     RowBox[{"1", "-", 
+      RowBox[{"x", "^", "2"}], "-", 
+      RowBox[{"y", "^", "2"}]}]]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.44671856546875*^9},
+ CellLabel->"In[122]:="],
+
+Cell[TextData[{
+ "Parametrische Plots im Raum sind entweder Kurven, wenn nur ein Parameter \
+verwendet wird, oder Oberfl\[ADoubleDot]chen f\[UDoubleDot]r zwei Parameter. \
+Das zweite Beispiel zeigt den ",
+ "Betrag der Kugelfl\[ADoubleDot]chenfunktion ",
+ Cell[BoxData[
+  SuperscriptBox[
+   SubscriptBox["Y", "2"], 
+   RowBox[{"-", "1"}]]]]
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"ParametricPlot3D", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Cos", "[", "t", "]"}], ",", 
+     RowBox[{"Sin", "[", "t", "]"}], ",", 
+     RowBox[{"t", "/", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"2", "Pi"}]}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.446718568828125*^9},
+ CellLabel->"In[123]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"r", "[", 
+   RowBox[{"t_", ",", "p_"}], "]"}], ":=", 
+  RowBox[{"Abs", "[", 
+   RowBox[{"SphericalHarmonicY", "[", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "1"}], ",", "t", ",", "p"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.446718577046875*^9, 3.44671858309375*^9}},
+ CellLabel->"In[124]:="],
+
+Cell[BoxData[
+ RowBox[{"ParametricPlot3D", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"r", "[", 
+     RowBox[{"\[Theta]", ",", "\[Phi]"}], "]"}], " ", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], 
+       RowBox[{"Cos", "[", "\[Phi]", "]"}]}], ",", 
+      RowBox[{
+       RowBox[{"Sin", "[", "\[Theta]", "]"}], 
+       RowBox[{"Sin", "[", "\[Phi]", "]"}]}], ",", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", "Pi"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Phi]", ",", "0", ",", 
+     RowBox[{"2", "Pi"}]}], "}"}], ",", 
+   RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.44671858634375*^9},
+ CellLabel->"In[125]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Andere Visualisierungsm\[ODoubleDot]glichkeiten"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Diskrete Punktmengen werden mit ",
+ Cell[BoxData["ListPlot"]],
+ " gezeichnet. Die Option ",
+ Cell[BoxData[
+  RowBox[{"PlotJoined", "\[Rule]", "True"}]]],
+ " verbindet die einzelnen Punkte."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"i", ",", 
+      RowBox[{"Log", "[", 
+       RowBox[{"Fibonacci", "[", "i", "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "50", ",", "100"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{3.446718624609375*^9},
+ CellLabel->"In[126]:="],
+
+Cell[TextData[{
+ Cell[BoxData["ContourPlot"]],
+ " bietet eine weitere M\[ODoubleDot]glichkeit, eine Funktion ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox["\[DoubleStruckCapitalR]", "2"], "\[Rule]", 
+   "\[DoubleStruckCapitalR]"}]]],
+ " darzustellen:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"ContourPlot", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", " ", "y"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "150"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.44671862759375*^9},
+ CellLabel->"In[127]:="]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+7. Einige vollst\[ADoubleDot]ndige Beispiele\
+\>", "Section"],
+
+Cell[TextData[{
+ "Die folgenden Abschnitte demonstrieren, wie man ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " in einigen einfachen konkreten Problemen einsetzt. F\[UDoubleDot]r die \
+Grafiken verwenden wir dabei durchgehend folgende Optionen:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"ListPlot", ",", " ", "ParametricPlot", ",", "ContourPlot"}], 
+     "}"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "150"}], ",", " ", 
+    RowBox[{"AspectRatio", "\[Rule]", "Automatic"}]}], "]"}], ";"}]], "Input",\
+
+ CellLabel->"In[128]:="],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Darstellung der n-ten Einheitswurzeln"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Die L\[ODoubleDot]sungen von Gleichungen liefert ",
+ StyleBox["Solve",
+  FontFamily->"Courier"],
+ " in Form einer Liste von Ersetzungsregeln zur\[UDoubleDot]ck:"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"z", "^", "4"}], "\[Equal]", "1"}], ",", "z"}], "]"}]], "Input",
+ CellLabel->"In[129]:="],
+
+Cell[TextData[{
+ "Um eine Liste aller n-ten Einheitswurzeln (aller L\[ODoubleDot]sungen der \
+Gleichung ",
+ Cell[BoxData[
+  RowBox[{
+   SuperscriptBox["z", "n"], "\[Equal]", "1"}]]],
+ ") zu bestimmen, kann man also schreiben"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"einheitsw", "[", "n_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "z", "}"}], ",", 
+    RowBox[{"z", "/.", 
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"z", "^", "n"}], "\[Equal]", "1"}], ",", "z"}], "]"}]}]}], 
+   "]"}]}]], "Input",
+ CellLabel->"In[130]:="],
+
+Cell[TextData[{
+ "Separiert man Real- und Imagin\[ADoubleDot]rteil erh\[ADoubleDot]lt man \
+hieraus die entsprechende Punktmenge in der Gau\[SZ]schen Zahlenebene, die \
+man schlie\[SZ]lich mit ",
+ StyleBox["ListPlot",
+  FontFamily->"Courier"],
+ " darstellen kann"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"ewxy", "=", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Re", "[", "#", "]"}], ",", 
+       RowBox[{"Im", "[", "#", "]"}]}], "}"}], "&"}], ",", 
+    RowBox[{"einheitsw", "[", "8", "]"}]}], "]"}]}]], "Input",
+ CellLabel->"In[131]:="],
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"ewxy", ",", 
+   RowBox[{"PlotStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"AbsolutePointSize", "[", "4", "]"}], "}"}]}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{3.446718670359375*^9},
+ CellLabel->"In[132]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Koch-Kurve (zum Knobeln)"
+}], "Subsection"],
+
+Cell["\<\
+Dieses Beispiel demonstriert die rekursive Konstruktion einer Koch-Kurve. \
+Ausgangsfigur ist dabei das folgende gleichseitige Dreieck.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dreieck", "=", 
+   RowBox[{"List", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         SqrtBox["3"]}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         SqrtBox["3"]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellLabel->"In[133]:="],
+
+Cell[TextData[{
+ "Diese Funktion erstellt eine graphische Darstellung einer Koch\[Dash]Kurve \
+n\[Dash]ter Ordnung. Die Kurve selbst wird wird von ",
+ StyleBox["verfeinerung ",
+  FontFamily->"Courier"],
+ "berechnet, die obiges Dreieck in n rekursiven Schritten \"verfeinert\" und \
+eine Kantenliste zur\[UDoubleDot]ckliefert."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"kochkurve", "[", "n_Integer", "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{"Map", "[", 
+    RowBox[{"Line", ",", 
+     RowBox[{"verfeinerung", "[", 
+      RowBox[{"dreieck", ",", "n"}], "]"}]}], "]"}], "]"}]}]], "Input",
+ CellLabel->"In[134]:="],
+
+Cell["\<\
+Diese Verfeinerung l\[ADoubleDot]uft wie folgt ab:\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"verfeinerung", "[", 
+    RowBox[{"kanten_", ",", " ", "0"}], "]"}], ":=", "kanten"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"verfeinerung", "[", 
+   RowBox[{"kanten_List", ",", " ", "n_Integer"}], "]"}], ":=", 
+  RowBox[{"verfeinerung", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Flatten", "[", 
+     RowBox[{
+      RowBox[{"Map", "[", 
+       RowBox[{"auswoelben", ",", "kanten"}], "]"}], ",", "1"}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"n", "-", "1"}]}], "]"}]}]}], "Input",
+ CellLabel->"In[135]:="],
+
+Cell["\<\
+Schlie\[SZ]lich das Ausw\[ODoubleDot]lben einer Kante: Das mittlere Drittel \
+jeder Kante wird entfernt und in die L\[UDoubleDot]cke die Spitze eines \
+kleineren gleichseitigen Dreiecks eingesetzt\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{"<<", "Geometry`Rotations`"}], "\[IndentingNewLine]", 
+ RowBox[{"rotmat", "=", 
+  RowBox[{"RotationMatrix2D", "[", 
+   RowBox[{"60", "Degree"}], "]"}]}]}], "Input",
+ CellLabel->"In[137]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"auswoelben", "[", 
+   RowBox[{"{", 
+    RowBox[{"a_", ",", "b_"}], "}"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "s"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"x", "=", 
+      RowBox[{"a", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"b", "-", "a"}], ")"}], "/", "3"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"y", "=", 
+      RowBox[{"b", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"b", "-", "a"}], ")"}], "/", "3"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"s", "=", 
+      RowBox[{"x", "+", 
+       RowBox[{"rotmat", ".", 
+        RowBox[{"(", 
+         RowBox[{"y", "-", "x"}], ")"}]}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"List", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"a", ",", "x"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "s"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"s", ",", "y"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"y", ",", "b"}], "}"}]}], "]"}]}]}], "]"}]}]], "Input",
+ CellLabel->"In[139]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GraphicsArray", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"kochkurve", "[", "i", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", "4"}], "}"}]}], "]"}], "]"}], "//", 
+  "Show"}]], "Input",
+ CellLabel->"In[140]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ 
+ CounterBox["Subsection"],
+ ". Symmetrische Matrizen"
+}], "Subsection"],
+
+Cell[TextData[{
+ "Reelle symmetrische Matrizen treten in vielen Zusammenh\[ADoubleDot]ngen \
+auf, etwa als Kovarianzmatrix ",
+ Cell[BoxData["\[CapitalSigma]"]],
+ " in mehrdimensionalen Normalverteilungen"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p", 
+   RowBox[{"(", "x", ")"}]}], "=", 
+  RowBox[{"A", " ", 
+   SuperscriptBox["e", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"-", "1"}], "2"], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"x", "-", "\[Mu]"}], ")"}], "T"], 
+     SuperscriptBox["\[CapitalSigma]", 
+      RowBox[{"-", "1"}]], 
+     RowBox[{"(", 
+      RowBox[{"x", "-", "\[Mu]"}], ")"}]}]]}]}]], "DisplayFormula"],
+
+Cell[TextData[{
+ "oder als Tr\[ADoubleDot]gheitstensor ",
+ Cell[BoxData["J"]],
+ " bei der Definition der Rotationsenergie in der klassischen Mechanik"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["E", "rot"], 
+   RowBox[{"(", "\[Omega]", ")"}]}], "=", 
+  RowBox[{
+   FractionBox["1", "2"], 
+   SuperscriptBox["\[Omega]", "T"], "J", " ", 
+   "\[Omega]"}]}]], "DisplayFormula"],
+
+Cell[TextData[{
+ "In beiden F\[ADoubleDot]llen sind die mithilfe der Matrizen gebildeten \
+Ausdr\[UDoubleDot]cke positiv definite ",
+ StyleBox["quadratische Formen.",
+  FontSlant->"Italic"],
+ " Diese haben die besondere Eigenschaft, dass Punkte mit konstantem \
+Funktionswert auf Hyperellipsoiden im jeweiligen Vektorraum liegen (etwa der \
+Tr\[ADoubleDot]gheitsellipsoid der \[Omega]-Vektoren mit konstanter \
+Rotationsenergie). Das kann man im Zweidimensionalen folgenderma\[SZ]en \
+veranschaulichen."
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"quadform", "[", 
+   RowBox[{"mtx_", ",", "vec_"}], "]"}], ":=", 
+  RowBox[{"vec", ".", "mtx", ".", "vec"}]}]], "Input",
+ CellLabel->"In[141]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"2", ",", "3"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "6"}], "}"}]}], "}"}]}], ";"}], "\t", 
+  RowBox[{"(*", " ", 
+   RowBox[{"symmetrisch", " ", "und", " ", 
+    RowBox[{"pos", ".", " ", "def", "."}]}], " ", "*)"}]}]], "Input",
+ CellLabel->"In[142]:="],
+
+Cell[TextData[{
+ "Einen \[CapitalUDoubleDot]berblick \[UDoubleDot]ber das Aussehen der zugeh\
+\[ODoubleDot]rigen quadratischen Form kann man sich mit ",
+ StyleBox["ContourPlot",
+  FontFamily->"Courier"],
+ " verschaffen"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"ContourPlot", "[", 
+  RowBox[{
+   RowBox[{"quadform", "[", 
+    RowBox[{"m", ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"y", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"PlotPoints", "\[Rule]", "40"}], ",", 
+   RowBox[{"ColorFunction", "\[Rule]", "Hue"}], ",", 
+   RowBox[{"Contours", "\[Rule]", "30"}]}], "]"}]], "Input",
+ CellChangeTimes->{3.446718724953125*^9},
+ CellLabel->"In[143]:="],
+
+Cell["\<\
+Wir dr\[UDoubleDot]cken die quadratische Form gleich in Polarkoordinaten aus, \
+um eine der Ellipsen einfach parametrisieren zu k\[ODoubleDot]nnen \
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"qform", "[", 
+   RowBox[{"r_", ",", "t_"}], "]"}], "=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{"quadform", "[", 
+    RowBox[{"m", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"r", " ", 
+        RowBox[{"Cos", "[", "t", "]"}]}], ",", 
+       RowBox[{"r", " ", 
+        RowBox[{"Sin", "[", "t", "]"}]}]}], "}"}]}], "]"}], "]"}]}]], "Input",\
+
+ CellLabel->"In[144]:="],
+
+Cell["\<\
+Die Menge der Vektoren in der Ebene f\[UDoubleDot]r die die Funktion konstant \
+Eins ist, l\[ADoubleDot]sst sich dann wie folgt darstellen\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"r", "[", "t_", "]"}], "=", 
+  RowBox[{"Part", "[", 
+   RowBox[{
+    RowBox[{"r", "/.", 
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"qform", "[", 
+         RowBox[{"r", ",", "t"}], "]"}], "\[Equal]", "1"}], ",", "r"}], 
+      "]"}]}], ",", "2"}], "]"}]}]], "Input",
+ CellLabel->"In[145]:="],
+
+Cell[BoxData[
+ RowBox[{"g", "=", 
+  RowBox[{"ParametricPlot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"r", "[", "t", "]"}], "*", 
+       RowBox[{"Cos", "[", "t", "]"}]}], ",", 
+      RowBox[{
+       RowBox[{"r", "[", "t", "]"}], "*", 
+       RowBox[{"Sin", "[", "t", "]"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"t", ",", "0", ",", 
+      RowBox[{"2", "Pi"}]}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->"In[146]:="],
+
+Cell["\<\
+Schlie\[SZ]lich kann man noch die Eigenvektoren von m einblenden. Wie man \
+sieht, sind die Eigenvektoren gerade die Hauptachsen der Ellipse, und die L\
+\[ADoubleDot]nge der Hauptachsen ist jeweils der Kehrwert der Wurzel aus dem \
+zugeh\[ODoubleDot]rigen Eigenwert (warum?).\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"ew", ",", "ev"}], "}"}], "=", 
+  RowBox[{"Eigensystem", "[", "m", "]"}]}]], "Input",
+ CellLabel->"In[147]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ev2", "=", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "/", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"#", ".", "#"}], "]"}]}], "&"}], ",", "ev"}], "]"}]}], ";"}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"Eigenv", ".", " ", "normieren"}], " ", "*)"}]}]], "Input",
+ CellLabel->"In[148]:="],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"li", "=", 
+   RowBox[{"Line", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"ev2", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], 
+       SqrtBox[
+        RowBox[{"ew", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]]], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      FractionBox[
+       RowBox[{"ev2", "[", 
+        RowBox[{"[", "2", "]"}], "]"}], 
+       SqrtBox[
+        RowBox[{"ew", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]]]}], "}"}], "]"}]}], ";"}]], "Input",
+ CellLabel->"In[149]:="],
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"{", 
+   RowBox[{"g", ",", 
+    RowBox[{"Graphics", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"AbsoluteThickness", "[", "3", "]"}], ",", "li"}], "}"}], 
+     "]"}]}], "}"}], "]"}]], "Input",
+ CellLabel->"In[150]:="]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+ScreenStyleEnvironment->"Working",
+WindowToolbars->{"RulerBar", "EditBar"},
+WindowSize->{1117, 934},
+WindowMargins->{{9, Automatic}, {Automatic, 9}},
+PrintingPageRange->{Automatic, Automatic},
+PrintingOptions->{"Magnification"->1,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{597.562, 842.375},
+"PostScriptOutputFile":>FrontEnd`FileName[{$RootDirectory, "home", "kuehn", 
+   "cp_phys", "notebooks"}, "mma-handb.ps", CharacterEncoding -> 
+  "ISO8859-1"],
+"PrintCellBrackets"->False,
+"PrintMultipleHorizontalPages"->False,
+"PrintRegistrationMarks"->True,
+"PrintingMargins"->{{54, 54}, {72, 72}}},
+DefaultNaturalLanguage->Language,
+Magnification->1,
+FrontEndVersion->"9.0 for Microsoft Windows (32-bit) (November 20, 2012)",
+StyleDefinitions->Notebook[{
+   Cell[
+    CellGroupData[{
+      Cell["Style Definitions", "Subtitle"], 
+      Cell[
+      "Modify the definitions below to change the default appearance of all \
+cells in a given style.  Make modifications to any definition using commands \
+in the Format menu.", "Text"], 
+      Cell[
+       CellGroupData[{
+         Cell["Style Environment Names", "Subsection"], 
+         Cell[
+          StyleData[All, "Working"], 
+          CellBracketOptions -> {"Color" -> RGBColor[0, 0.2, 1]}, 
+          ScriptMinSize -> 9], 
+         Cell[
+          StyleData[All, "Printout"], PageWidth -> PaperWidth, 
+          PrivateFontOptions -> {"FontType" -> "Outline"}]}, Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell["Notebook Options", "Subsection"], 
+         Cell[
+         "  The options defined for the style below will be used at the \
+Notebook level.  ", "Text"], 
+         Cell[
+          StyleData["Notebook"], PageHeaders -> {{
+             Cell[
+              TextData[{
+                CounterBox["Page"]}], "PageNumber"], None, 
+             Cell[
+              TextData[{
+                OptionValueBox["FileName"]}], "Header"]}, {
+             Cell[
+              TextData[{
+                OptionValueBox["FileName"]}], "Header"], None, 
+             Cell[
+              TextData[{
+                CounterBox["Page"]}], "PageNumber"]}}, 
+          PrintingOptions -> {
+           "FacingPages" -> True, "FirstPageHeader" -> False}, 
+          CellLabelAutoDelete -> False, CellFrameLabelMargins -> 6, 
+          StyleMenuListing -> None]}, Open]], 
+      Cell[
+       CellGroupData[{
+         Cell["Headings", "Subsection"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Title"], CellMargins -> {{12, Inherited}, {2, 20}}, 
+             CellGroupingRules -> {"TitleGrouping", 0}, PageBreakBelow -> 
+             False, InputAutoReplacements -> {"TeX" -> StyleBox[
+                 RowBox[{"T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "LaTeX" -> StyleBox[
+                 RowBox[{"L", 
+                   StyleBox[
+                    AdjustmentBox[
+                    "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, 
+                    BoxBaselineShift -> -0.2], FontSize -> Smaller], "T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "mma" -> "Mathematica", 
+               "Mma" -> "Mathematica", "MMA" -> "Mathematica"}, 
+             CounterIncrements -> "Title", 
+             CounterAssignments -> {{"Section", 0}, {"Equation", 0}, {
+               "Figure", 0}, {"Subtitle", 0}, {"Subsubtitle", 0}}, FontFamily -> 
+             "Helvetica", FontSize -> 30, FontWeight -> "Bold"], 
+            Cell[
+             StyleData["Title", "Printout"], 
+             CellMargins -> {{2, 10}, {2, 30}}, FontSize -> 24]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Subtitle"], CellMargins -> {{12, Inherited}, {2, 2}}, 
+             CellGroupingRules -> {"TitleGrouping", 10}, PageBreakBelow -> 
+             False, InputAutoReplacements -> {"TeX" -> StyleBox[
+                 RowBox[{"T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "LaTeX" -> StyleBox[
+                 RowBox[{"L", 
+                   StyleBox[
+                    AdjustmentBox[
+                    "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, 
+                    BoxBaselineShift -> -0.2], FontSize -> Smaller], "T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "mma" -> "Mathematica", 
+               "Mma" -> "Mathematica", "MMA" -> "Mathematica"}, 
+             CounterIncrements -> "Subtitle", 
+             CounterAssignments -> {{"Section", 0}, {"Equation", 0}, {
+               "Figure", 0}, {"Subsubtitle", 0}}, FontFamily -> "Helvetica", 
+             FontSize -> 24, FontColor -> RGBColor[0, 0, 0.6]], 
+            Cell[
+             StyleData["Subtitle", "Printout"], 
+             CellMargins -> {{2, 10}, {2, 4}}, FontSize -> 18, FontColor -> 
+             GrayLevel[0]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Subsubtitle"], 
+             CellMargins -> {{12, Inherited}, {2, 12}}, 
+             CellGroupingRules -> {"TitleGrouping", 20}, PageBreakBelow -> 
+             False, InputAutoReplacements -> {"TeX" -> StyleBox[
+                 RowBox[{"T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "LaTeX" -> StyleBox[
+                 RowBox[{"L", 
+                   StyleBox[
+                    AdjustmentBox[
+                    "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, 
+                    BoxBaselineShift -> -0.2], FontSize -> Smaller], "T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "mma" -> "Mathematica", 
+               "Mma" -> "Mathematica", "MMA" -> "Mathematica"}, 
+             CounterIncrements -> "Subsubtitle", 
+             CounterAssignments -> {{"Section", 0}, {"Equation", 0}, {
+               "Figure", 0}}, FontFamily -> "Helvetica", FontSize -> 14, 
+             FontSlant -> "Italic", FontColor -> RGBColor[0, 0, 0.6]], 
+            Cell[
+             StyleData["Subsubtitle", "Printout"], 
+             CellMargins -> {{2, 10}, {2, 8}}, FontSize -> 12, FontColor -> 
+             GrayLevel[0]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Section"], CellFrame -> {{0, 0}, {2, 0}}, 
+             CellMargins -> {{10, 4}, {2, 50}}, 
+             CellElementSpacings -> {"ClosedGroupTopMargin" -> 18}, 
+             CellGroupingRules -> {"SectionGrouping", 30}, PageBreakBelow -> 
+             False, InputAutoReplacements -> {"TeX" -> StyleBox[
+                 RowBox[{"T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "LaTeX" -> StyleBox[
+                 RowBox[{"L", 
+                   StyleBox[
+                    AdjustmentBox[
+                    "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, 
+                    BoxBaselineShift -> -0.2], FontSize -> Smaller], "T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "mma" -> "Mathematica", 
+               "Mma" -> "Mathematica", "MMA" -> "Mathematica"}, 
+             CounterIncrements -> "Section", 
+             CounterAssignments -> {{"Subsection", 0}, {"Subsubsection", 0}}, 
+             FontFamily -> "Helvetica", FontSize -> 18, FontWeight -> "Bold"], 
+            Cell[
+             StyleData["Section", "Printout"], 
+             CellMargins -> {{2, 4}, {2, 80}}, FontSize -> 14]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Subsection"], CellDingbat -> "\[FilledSquare]", 
+             CellMargins -> {{24, 4}, {2, 18}}, 
+             CellElementSpacings -> {"ClosedGroupTopMargin" -> 12}, 
+             CellGroupingRules -> {"SectionGrouping", 40}, PageBreakBelow -> 
+             False, CellFrameLabelMargins -> 6, 
+             InputAutoReplacements -> {"TeX" -> StyleBox[
+                 RowBox[{"T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "LaTeX" -> StyleBox[
+                 RowBox[{"L", 
+                   StyleBox[
+                    AdjustmentBox[
+                    "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, 
+                    BoxBaselineShift -> -0.2], FontSize -> Smaller], "T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "mma" -> "Mathematica", 
+               "Mma" -> "Mathematica", "MMA" -> "Mathematica"}, 
+             CounterIncrements -> "Subsection", 
+             CounterAssignments -> {{"Subsubsection", 0}}, FontFamily -> 
+             "Helvetica", FontSize -> 15, FontWeight -> "Bold", 
+             CounterBoxOptions -> {
+              BaseStyle -> "Subsection", CounterFunction :> RomanNumeral}], 
+            Cell[
+             StyleData["Subsection", "Printout"], 
+             CellMargins -> {{2, 4}, {2, 18}}, 
+             InputAutoReplacements -> {"TeX" -> StyleBox[
+                 RowBox[{"T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "LaTeX" -> StyleBox[
+                 RowBox[{"L", 
+                   StyleBox[
+                    AdjustmentBox[
+                    "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, 
+                    BoxBaselineShift -> -0.2], FontSize -> Smaller], "T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "mma" -> "Mathematica", 
+               "Mma" -> "Mathematica", "MMA" -> "Mathematica"}, FontSize -> 
+             12]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Subsubsection"], CellMargins -> {{10, 4}, {2, 18}}, 
+             CellElementSpacings -> {"ClosedGroupTopMargin" -> 12}, 
+             CellGroupingRules -> {"SectionGrouping", 50}, PageBreakBelow -> 
+             False, InputAutoReplacements -> {"TeX" -> StyleBox[
+                 RowBox[{"T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "LaTeX" -> StyleBox[
+                 RowBox[{"L", 
+                   StyleBox[
+                    AdjustmentBox[
+                    "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, 
+                    BoxBaselineShift -> -0.2], FontSize -> Smaller], "T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "mma" -> "Mathematica", 
+               "Mma" -> "Mathematica", "MMA" -> "Mathematica"}, 
+             CounterIncrements -> "Subsubsection", FontFamily -> "Helvetica", 
+             FontWeight -> "Bold"], 
+            Cell[
+             StyleData["Subsubsection", "Printout"], 
+             CellMargins -> {{2, 4}, {2, 18}}, FontSize -> 10]}, Closed]]}, 
+        Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell["Text", "Subsection"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Text"], CellMargins -> {{10, 4}, {0, 8}}, 
+             InputAutoReplacements -> {"TeX" -> StyleBox[
+                 RowBox[{"T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "LaTeX" -> StyleBox[
+                 RowBox[{"L", 
+                   StyleBox[
+                    AdjustmentBox[
+                    "A", BoxMargins -> {{-0.36, -0.1}, {0, 0}}, 
+                    BoxBaselineShift -> -0.2], FontSize -> Smaller], "T", 
+                   AdjustmentBox[
+                   "E", BoxMargins -> {{-0.075, -0.085}, {0, 0}}, 
+                    BoxBaselineShift -> 0.5], "X"}]], "mma" -> "Mathematica", 
+               "Mma" -> "Mathematica", "MMA" -> "Mathematica"}, 
+             TextJustification -> 1, Hyphenation -> True, 
+             ParagraphSpacing -> {0, 8}, DefaultNaturalLanguage -> "German", 
+             CounterIncrements -> "Text"], 
+            Cell[
+             StyleData["Text", "Printout"], CellMargins -> {{2, 4}, {0, 8}}, 
+             FontSize -> 10]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["MathCaption"], CellFrame -> {{4, 0}, {0, 0}}, 
+             CellMargins -> {{47, 62}, {0, 14}}, CellFrameMargins -> 5, 
+             CellFrameColor -> RGBColor[0, 0.2, 1], Hyphenation -> True, 
+             LineSpacing -> {1, 1}, ParagraphSpacing -> {0, 8}, FontColor -> 
+             RGBColor[0, 0, 0.6]], 
+            Cell[
+             StyleData["MathCaption", "Printout"], 
+             CellMargins -> {{34, 62}, {0, 14}}, CellFrameColor -> 
+             GrayLevel[0.700008], FontSize -> 10, FontColor -> GrayLevel[0]]},
+            Closed]]}, Open]], 
+      Cell[
+       CellGroupData[{
+         Cell["Input/Output", "Subsection"], 
+         Cell[
+         "The cells in this section define styles used for input and output \
+to the kernel.  Be careful when modifying, renaming, or removing these \
+styles, because the front end associates special meanings with these style \
+names.    ", "Text"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Input"], CellMargins -> {{56, 4}, {3, 9}}, 
+             Evaluatable -> True, CellGroupingRules -> "InputGrouping", 
+             PageBreakWithin -> False, GroupPageBreakWithin -> False, 
+             ShowCellLabel -> True, 
+             CellLabelMargins -> {{21, Inherited}, {Inherited, Inherited}}, 
+             DefaultFormatType -> DefaultInputFormatType, 
+             HyphenationOptions -> {
+              "HyphenationCharacter" -> "\[Continuation]"}, 
+             LineSpacing -> {1, 0}, AutoItalicWords -> {}, LanguageCategory -> 
+             "Formula", FormatType -> StandardForm, ShowStringCharacters -> 
+             True, NumberMarks -> True, 
+             LinebreakAdjustments -> {0.85, 2, 10, 0, 1}, CounterIncrements -> 
+             "Input", FontWeight -> "Bold"], 
+            Cell[
+             StyleData["Input", "Printout"], ShowCellBracket -> False, 
+             CellMargins -> {{42, 4}, {3, 8}}, 
+             CellLabelMargins -> {{21, Inherited}, {Inherited, Inherited}}, 
+             LineSpacing -> {1, 0}, 
+             LinebreakAdjustments -> {0.85, 2, 10, 1, 1}, FontSize -> 10]}, 
+           Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Output"], CellMargins -> {{57, 4}, {5, 2}}, 
+             CellEditDuplicate -> True, CellGroupingRules -> "OutputGrouping",
+              PageBreakWithin -> False, GroupPageBreakWithin -> False, 
+             GeneratedCell -> True, CellAutoOverwrite -> True, ShowCellLabel -> 
+             True, 
+             CellLabelMargins -> {{21, Inherited}, {Inherited, Inherited}}, 
+             DefaultFormatType -> DefaultOutputFormatType, 
+             HyphenationOptions -> {
+              "HyphenationCharacter" -> "\[Continuation]"}, 
+             LineSpacing -> {1, 0}, AutoItalicWords -> {}, LanguageCategory -> 
+             "Formula", FormatType -> StandardForm, CounterIncrements -> 
+             "Output"], 
+            Cell[
+             StyleData["Output", "Printout"], ShowCellBracket -> False, 
+             CellMargins -> {{42, 4}, {4, 2}}, LineSpacing -> {1, 0}, 
+             FontSize -> 10]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Message"], CellMargins -> {{56, 4}, {3, 8}}, 
+             CellGroupingRules -> "OutputGrouping", PageBreakWithin -> False, 
+             GroupPageBreakWithin -> False, GeneratedCell -> True, 
+             CellAutoOverwrite -> True, ShowCellLabel -> False, 
+             CellLabelMargins -> {{21, Inherited}, {Inherited, Inherited}}, 
+             DefaultFormatType -> DefaultOutputFormatType, 
+             HyphenationOptions -> {
+              "HyphenationCharacter" -> "\[Continuation]"}, 
+             AutoItalicWords -> {}, FormatType -> InputForm, 
+             CounterIncrements -> "Message", StyleMenuListing -> None, 
+             FontColor -> RGBColor[0, 0.2, 1]], 
+            Cell[
+             StyleData["Message", "Printout"], ShowCellBracket -> False, 
+             CellMargins -> {{42, 4}, {4, 2}}, FontSize -> 10, FontColor -> 
+             GrayLevel[0]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Print"], CellMargins -> {{56, 4}, {3, 8}}, 
+             CellGroupingRules -> "OutputGrouping", PageBreakWithin -> False, 
+             GroupPageBreakWithin -> False, GeneratedCell -> True, 
+             CellAutoOverwrite -> True, ShowCellLabel -> False, 
+             CellLabelMargins -> {{21, Inherited}, {Inherited, Inherited}}, 
+             DefaultFormatType -> DefaultOutputFormatType, 
+             HyphenationOptions -> {
+              "HyphenationCharacter" -> "\[Continuation]"}, 
+             AutoItalicWords -> {}, FormatType -> InputForm, 
+             CounterIncrements -> "Print", StyleMenuListing -> None], 
+            Cell[
+             StyleData["Print", "Printout"], ShowCellBracket -> False, 
+             CellMargins -> {{42, 4}, {4, 2}}, FontSize -> 10]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Graphics"], 
+             CellMargins -> {{56, Inherited}, {Inherited, Inherited}}, 
+             CellGroupingRules -> "GraphicsGrouping", CellHorizontalScrolling -> 
+             True, PageBreakWithin -> False, GeneratedCell -> True, 
+             CellAutoOverwrite -> True, ShowCellLabel -> False, 
+             DefaultFormatType -> DefaultOutputFormatType, FormatType -> 
+             InputForm, CounterIncrements -> "Graphics", StyleMenuListing -> 
+             None], 
+            Cell[
+             StyleData["Graphics", "Printout"], 
+             CellMargins -> {{40, 4}, {4, 2}}, ImageSize -> {250, 250}, 
+             FontSize -> 9]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["CellLabel"], StyleMenuListing -> None, FontFamily -> 
+             "Helvetica", FontSize -> 9, FontColor -> RGBColor[0, 0.2, 1]], 
+            Cell[
+             StyleData["CellLabel", "Printout"], FontSize -> 7, FontSlant -> 
+             "Oblique", FontColor -> GrayLevel[0]]}, Closed]]}, Open]], 
+      Cell[
+       CellGroupData[{
+         Cell["Unique Styles", "Subsection"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["TextTop"], CellFrame -> {{0, 0}, {0, 2}}, 
+             CellMargins -> {{10, 4}, {2, 80}}, CellHorizontalScrolling -> 
+             True, CellFrameMargins -> 4, ShowSpecialCharacters -> Automatic, 
+             ParagraphSpacing -> {0, 8}, CounterIncrements -> "Text"], 
+            Cell[
+             StyleData["TextTop", "Printout"], 
+             CellMargins -> {{2, 4}, {2, 80}}, FontSize -> 10]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["ItemizedText"], CellMargins -> {{20, 4}, {0, 8}}, 
+             ShowSpecialCharacters -> Automatic, Hyphenation -> True, 
+             ParagraphSpacing -> {0, 8}, ParagraphIndent -> -15, 
+             CounterIncrements -> "Text"], 
+            Cell[
+             StyleData["ItemizedText", "Printout"], FontSize -> 10]}, 
+           Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["ItemizedTextNote"], CellMargins -> {{35, 4}, {0, 4}}, 
+             ShowSpecialCharacters -> Automatic, Hyphenation -> True, 
+             ParagraphSpacing -> {0, 4}, CounterIncrements -> "Text"], 
+            Cell[
+             StyleData["ItemizedTextNote", "Printout"], FontSize -> 10]}, 
+           Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["IndentedText"], CellMargins -> {{20, 4}, {0, 6}}, 
+             ShowSpecialCharacters -> Automatic, Hyphenation -> True, 
+             ParagraphSpacing -> {0, 8}, CounterIncrements -> "Text"], 
+            Cell[
+             StyleData["IndentedText", "Printout"], FontSize -> 10]}, 
+           Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Note"], CellFrame -> True, 
+             CellMargins -> {{10, 4}, {0, 8}}, CellHorizontalScrolling -> 
+             True, ShowSpecialCharacters -> Automatic, 
+             ParagraphSpacing -> {0, 8}, CounterIncrements -> "Text", 
+             FontFamily -> "Helvetica", FontSize -> 10], 
+            Cell[
+             StyleData["Note", "Printout"], CellMargins -> {{2, 4}, {0, 8}}]},
+            Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["1ColumnBox"], CellFrame -> True, 
+             CellMargins -> {{10, 4}, {0, 8}}, CellHorizontalScrolling -> 
+             True, LineIndent -> 0, Background -> GrayLevel[0.8], 
+             FrameBoxOptions -> {
+              FrameMargins -> {{15.600000000000001`, 15.600000000000001`}, {
+                11.700000000000001`, 11.700000000000001`}}}, 
+             GridBoxOptions -> {GridBoxSpacings -> {"Columns" -> {
+                   Offset[0.27999999999999997`], {
+                    Offset[0.7]}, 
+                   Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {
+                   Offset[0.2], {
+                    Offset[0.4]}, 
+                   Offset[0.2]}, "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["1ColumnBox", "Printout"], 
+             CellMargins -> {{2, 4}, {0, 8}}, FontSize -> 10, Background -> 
+             GrayLevel[0.900008]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["2ColumnBox"], CellFrame -> True, 
+             CellMargins -> {{10, 4}, {0, 8}}, CellHorizontalScrolling -> 
+             True, LineIndent -> 0, Background -> GrayLevel[0.8], 
+             FrameBoxOptions -> {
+              FrameMargins -> {{15.600000000000001`, 15.600000000000001`}, {
+                11.700000000000001`, 11.700000000000001`}}}, 
+             GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {
+                   Scaled[0.39], {
+                    Scaled[0.59]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+                 "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["2ColumnBox", "Printout"], 
+             CellMargins -> {{2, 4}, {0, 8}}, FontSize -> 10, Background -> 
+             GrayLevel[0.900008]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["2ColumnSmallBox"], CellFrame -> True, 
+             CellMargins -> {{10, 4}, {0, 8}}, CellHorizontalScrolling -> 
+             True, LineIndent -> 0, Background -> GrayLevel[0.8], 
+             FrameBoxOptions -> {
+              FrameMargins -> {{15.600000000000001`, 15.600000000000001`}, {
+                11.700000000000001`, 11.700000000000001`}}}, 
+             GridBoxOptions -> {
+              GridBoxAlignment -> {
+                "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}, 
+               GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[0.35]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+                 "RowsIndexed" -> {}}, GridBoxSpacings -> {"Columns" -> {
+                   Offset[0.27999999999999997`], {
+                    Offset[1.0499999999999998`]}, 
+                   Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {
+                   Offset[0.2], {
+                    Offset[0.4]}, 
+                   Offset[0.2]}, "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["2ColumnSmallBox", "Printout"], 
+             CellMargins -> {{2, 4}, {0, 8}}, FontSize -> 10, Background -> 
+             GrayLevel[0.900008]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["3ColumnBox"], CellFrame -> True, 
+             CellMargins -> {{10, 4}, {0, 8}}, CellHorizontalScrolling -> 
+             True, LineIndent -> 0, Background -> GrayLevel[0.8], 
+             FrameBoxOptions -> {
+              FrameMargins -> {{15.600000000000001`, 15.600000000000001`}, {
+                11.700000000000001`, 11.700000000000001`}}}, 
+             GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[0.325]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+                  "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["3ColumnBox", "Printout"], 
+             CellMargins -> {{2, 4}, {0, 8}}, FontSize -> 10, Background -> 
+             GrayLevel[0.900008]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["3ColumnSmallBox"], CellFrame -> True, 
+             CellMargins -> {{10, 4}, {0, 8}}, CellHorizontalScrolling -> 
+             True, LineIndent -> 0, Background -> GrayLevel[0.8], 
+             FrameBoxOptions -> {
+              FrameMargins -> {{15.600000000000001`, 15.600000000000001`}, {
+                11.700000000000001`, 11.700000000000001`}}}, 
+             GridBoxOptions -> {
+              GridBoxAlignment -> {
+                "Columns" -> {Right, Center, {Left}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}, 
+               GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[0.23]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+                 "RowsIndexed" -> {}}, GridBoxSpacings -> {"Columns" -> {
+                   Offset[0.27999999999999997`], {
+                    Offset[1.0499999999999998`]}, 
+                   Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {
+                   Offset[0.2], {
+                    Offset[0.4]}, 
+                   Offset[0.2]}, "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["3ColumnSmallBox", "Printout"], 
+             CellMargins -> {{2, 4}, {0, 8}}, FontSize -> 10, Background -> 
+             GrayLevel[0.900008]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["4ColumnBox"], CellFrame -> True, 
+             CellMargins -> {{10, 4}, {0, 8}}, CellHorizontalScrolling -> 
+             True, LineIndent -> 0, Background -> GrayLevel[0.8], 
+             FrameBoxOptions -> {
+              FrameMargins -> {{15.600000000000001`, 15.600000000000001`}, {
+                11.700000000000001`, 11.700000000000001`}}}, 
+             GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {
+                   Scaled[0.145], 
+                   Scaled[0.345], 
+                   Scaled[0.145], {
+                    Scaled[0.345]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+                  "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["4ColumnBox", "Printout"], 
+             CellMargins -> {{2, 4}, {0, 8}}, FontSize -> 10, Background -> 
+             GrayLevel[0.900008]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["5ColumnBox"], CellFrame -> True, 
+             CellMargins -> {{10, 4}, {0, 8}}, CellHorizontalScrolling -> 
+             True, LineIndent -> 0, Background -> GrayLevel[0.8], 
+             FrameBoxOptions -> {
+              FrameMargins -> {{15.600000000000001`, 15.600000000000001`}, {
+                11.700000000000001`, 11.700000000000001`}}}, 
+             GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[0.195]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+                  "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["5ColumnBox", "Printout"], 
+             CellMargins -> {{2, 4}, {0, 8}}, FontSize -> 10, Background -> 
+             GrayLevel[0.900008]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["6ColumnBox"], CellFrame -> True, 
+             CellMargins -> {{10, 4}, {0, 8}}, CellHorizontalScrolling -> 
+             True, LineIndent -> 0, Background -> GrayLevel[0.8], 
+             FrameBoxOptions -> {
+              FrameMargins -> {{15.600000000000001`, 15.600000000000001`}, {
+                11.700000000000001`, 11.700000000000001`}}}, 
+             GridBoxOptions -> {GridBoxItemSize -> {"Columns" -> {
+                   Scaled[0.13], 
+                   Scaled[0.23], 
+                   Scaled[0.13], 
+                   Scaled[0.13], 
+                   Scaled[0.23], {
+                    Scaled[0.13]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+                 "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["6ColumnBox", "Printout"], 
+             CellMargins -> {{2, 4}, {0, 8}}, FontSize -> 10, Background -> 
+             GrayLevel[0.900008]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Picture"], CellMargins -> {{10, Inherited}, {0, 8}}, 
+             CellHorizontalScrolling -> True], 
+            Cell[
+             StyleData["Picture", "Printout"], 
+             CellMargins -> {{2, Inherited}, {0, 8}}]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Caption"], CellMargins -> {{10, 50}, {0, 3}}, 
+             PageBreakAbove -> False, Hyphenation -> True, FontFamily -> 
+             "Helvetica", FontSize -> 9], 
+            Cell[
+             StyleData["Caption", "Printout"], 
+             CellMargins -> {{2, 50}, {2, 4}}, FontSize -> 7]}, Closed]]}, 
+        Open]], 
+      Cell[
+       CellGroupData[{
+         Cell["Tables", "Subsection"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["2ColumnTable"], CellFrame -> True, 
+             CellMargins -> {{10, 4}, {0, 8}}, CellHorizontalScrolling -> 
+             False, LineBreakWithin -> False, FontSize -> 10, 
+             GridBoxOptions -> {
+              GridBoxAlignment -> {
+                "Columns" -> {Right, {Left}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}, 
+               GridBoxItemSize -> {"Columns" -> {
+                   Scaled[0.39], {
+                    Scaled[0.59]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+                 "RowsIndexed" -> {}}, GridBoxSpacings -> {"Columns" -> {
+                   Offset[0.27999999999999997`], {
+                    Offset[1.0499999999999998`]}, 
+                   Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {
+                   Offset[0.2], {
+                    Offset[0.4]}, 
+                   Offset[0.2]}, "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["2ColumnTable", "Printout"], CellFrame -> True, 
+             CellMargins -> {{2, 4}, {0, 8}}]}, Open]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["3ColumnTable"], CellMargins -> {{10, 4}, {0, 8}}, 
+             CellHorizontalScrolling -> True, StyleMenuListing -> None, 
+             GridBoxOptions -> {
+              GridBoxAlignment -> {
+                "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{Baseline}}, "RowsIndexed" -> {}}, 
+               GridBoxItemSize -> {"Columns" -> {{
+                    Scaled[0.325]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+                  "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["3ColumnTable", "Printout"], 
+             CellMargins -> {{2, 4}, {0, 8}}, FontSize -> 10]}, Closed]]}, 
+        Open]], 
+      Cell[
+       CellGroupData[{
+         Cell["Formulas and Programming", "Subsection"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["ChemicalFormula"], 
+             CellMargins -> {{42, Inherited}, {Inherited, Inherited}}, 
+             CellHorizontalScrolling -> True, DefaultFormatType -> 
+             DefaultInputFormatType, 
+             HyphenationOptions -> {
+              "HyphenationCharacter" -> "\[Continuation]"}, LanguageCategory -> 
+             "Formula", AutoSpacing -> False, 
+             ScriptBaselineShifts -> {0.6, Automatic}, ScriptLevel -> 1, 
+             SingleLetterItalics -> False, ZeroWidthTimes -> True], 
+            Cell[
+             StyleData["ChemicalFormula", "Printout"], 
+             CellMargins -> {{34, Inherited}, {Inherited, Inherited}}, 
+             FontSize -> 10]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["DisplayFormula"], 
+             CellMargins -> {{42, Inherited}, {Inherited, Inherited}}, 
+             CellHorizontalScrolling -> True, DefaultFormatType -> 
+             DefaultInputFormatType, 
+             HyphenationOptions -> {
+              "HyphenationCharacter" -> "\[Continuation]"}, LanguageCategory -> 
+             "Formula", ScriptLevel -> 0, SingleLetterItalics -> True, 
+             SpanMaxSize -> Infinity, 
+             UnderoverscriptBoxOptions -> {LimitsPositioning -> True}, 
+             GridBoxOptions -> {
+              GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{1.}}, "RowsIndexed" -> {}}}], 
+            Cell[
+             StyleData["DisplayFormula", "Printout"], 
+             CellMargins -> {{34, Inherited}, {Inherited, Inherited}}, 
+             FontSize -> 10]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Program"], CellMargins -> {{10, 4}, {0, 8}}, 
+             CellHorizontalScrolling -> True, Hyphenation -> False, 
+             LanguageCategory -> "Formula", FontFamily -> "Courier"], 
+            Cell[
+             StyleData["Program", "Printout"], 
+             CellMargins -> {{2, Inherited}, {Inherited, Inherited}}, 
+             FontSize -> 9.5]}, Closed]]}, Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell["Hyperlink Styles", "Subsection"], 
+         Cell[
+         "The cells below define styles useful for making hypertext \
+ButtonBoxes.  The \"Hyperlink\" style is for links within the same Notebook, \
+or between Notebooks.", "Text"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["Hyperlink"], StyleMenuListing -> None, 
+             ButtonStyleMenuListing -> Automatic, 
+             FontVariations -> {"Underline" -> True}, FontColor -> 
+             RGBColor[0, 0, 1], 
+             ButtonBoxOptions -> {
+              Active -> True, ButtonFunction :> (FrontEndExecute[{
+                  FrontEnd`NotebookLocate[#2]}]& ), ButtonNote -> 
+               ButtonData}], 
+            Cell[
+             StyleData["Hyperlink", "Printout"], FontSize -> 10, 
+             FontVariations -> {"Underline" -> False}, FontColor -> 
+             GrayLevel[0]]}, Closed]], 
+         Cell[
+         "The following styles are for linking automatically to the on-line \
+help system.", "Text"], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["MainBookLink"], StyleMenuListing -> None, 
+             ButtonStyleMenuListing -> Automatic, 
+             FontVariations -> {"Underline" -> True}, FontColor -> 
+             RGBColor[0, 0, 1], 
+             ButtonBoxOptions -> {
+              Active -> True, Appearance -> {Automatic, None}, 
+               ButtonFunction :> (FrontEndExecute[{
+                  FrontEnd`HelpBrowserLookup["MainBook", #]}]& )}], 
+            Cell[
+             StyleData["MainBookLink", "Printout"], FontSize -> 10, 
+             FontVariations -> {"Underline" -> False}, FontColor -> 
+             GrayLevel[0]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["AddOnsLink"], StyleMenuListing -> None, 
+             ButtonStyleMenuListing -> Automatic, FontFamily -> "Courier", 
+             FontVariations -> {"Underline" -> True}, FontColor -> 
+             RGBColor[0, 0, 1], 
+             ButtonBoxOptions -> {
+              Active -> True, Appearance -> {Automatic, None}, 
+               ButtonFunction :> (FrontEndExecute[{
+                  FrontEnd`HelpBrowserLookup["AddOns", #]}]& )}], 
+            Cell[
+             StyleData["AddOnsLink", "Printout"], FontSize -> 10, 
+             FontVariations -> {"Underline" -> False}, FontColor -> 
+             GrayLevel[0]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["RefGuideLink"], StyleMenuListing -> None, 
+             ButtonStyleMenuListing -> Automatic, FontFamily -> "Courier", 
+             FontVariations -> {"Underline" -> True}, FontColor -> 
+             RGBColor[0, 0, 1], 
+             ButtonBoxOptions -> {
+              Active -> True, Appearance -> {Automatic, None}, 
+               ButtonFunction :> (FrontEndExecute[{
+                  FrontEnd`HelpBrowserLookup["RefGuide", #]}]& )}], 
+            Cell[
+             StyleData["RefGuideLink", "Printout"], FontSize -> 10, 
+             FontVariations -> {"Underline" -> False}, FontColor -> 
+             GrayLevel[0]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["GettingStartedLink"], StyleMenuListing -> None, 
+             ButtonStyleMenuListing -> Automatic, 
+             FontVariations -> {"Underline" -> True}, FontColor -> 
+             RGBColor[0, 0, 1], 
+             ButtonBoxOptions -> {
+              Active -> True, Appearance -> {Automatic, None}, 
+               ButtonFunction :> (FrontEndExecute[{
+                  FrontEnd`HelpBrowserLookup["GettingStarted", #]}]& )}], 
+            Cell[
+             StyleData["GettingStartedLink", "Printout"], FontSize -> 10, 
+             FontVariations -> {"Underline" -> False}, FontColor -> 
+             GrayLevel[0]]}, Closed]], 
+         Cell[
+          CellGroupData[{
+            Cell[
+             StyleData["OtherInformationLink"], StyleMenuListing -> None, 
+             ButtonStyleMenuListing -> Automatic, 
+             FontVariations -> {"Underline" -> True}, FontColor -> 
+             RGBColor[0, 0, 1], 
+             ButtonBoxOptions -> {
+              Active -> True, Appearance -> {Automatic, None}, 
+               ButtonFunction :> (FrontEndExecute[{
+                  FrontEnd`HelpBrowserLookup["OtherInformation", #]}]& )}], 
+            Cell[
+             StyleData["OtherInformationLink", "Printout"], FontSize -> 10, 
+             FontVariations -> {"Underline" -> False}, FontColor -> 
+             GrayLevel[0]]}, Closed]]}, Closed]], 
+      Cell[
+       CellGroupData[{
+         Cell["Palette Styles", "Subsection"], 
+         Cell[
+         "The cells below define styles that define standard ButtonFunctions, \
+for use in palette buttons.", "Text"], 
+         Cell[
+          StyleData["Paste"], StyleMenuListing -> None, 
+          ButtonStyleMenuListing -> Automatic, 
+          ButtonBoxOptions -> {ButtonFunction :> (FrontEndExecute[{
+               FrontEnd`NotebookApply[
+                FrontEnd`InputNotebook[], #, After]}]& )}], 
+         Cell[
+          StyleData["Evaluate"], StyleMenuListing -> None, 
+          ButtonStyleMenuListing -> Automatic, 
+          ButtonBoxOptions -> {ButtonFunction :> (FrontEndExecute[{
+               FrontEnd`NotebookApply[
+                FrontEnd`InputNotebook[], #, All], 
+               SelectionEvaluate[
+                FrontEnd`InputNotebook[], All]}]& )}], 
+         Cell[
+          StyleData["EvaluateCell"], StyleMenuListing -> None, 
+          ButtonStyleMenuListing -> Automatic, 
+          ButtonBoxOptions -> {ButtonFunction :> (FrontEndExecute[{
+               FrontEnd`NotebookApply[
+                FrontEnd`InputNotebook[], #, All], 
+               FrontEnd`SelectionMove[
+                FrontEnd`InputNotebook[], All, Cell, 1], 
+               FrontEnd`SelectionEvaluateCreateCell[
+                FrontEnd`InputNotebook[], All]}]& )}], 
+         Cell[
+          StyleData["CopyEvaluate"], StyleMenuListing -> None, 
+          ButtonStyleMenuListing -> Automatic, 
+          ButtonBoxOptions -> {ButtonFunction :> (FrontEndExecute[{
+               FrontEnd`SelectionCreateCell[
+                FrontEnd`InputNotebook[], All], 
+               FrontEnd`NotebookApply[
+                FrontEnd`InputNotebook[], #, All], 
+               FrontEnd`SelectionEvaluate[
+                FrontEnd`InputNotebook[], All]}]& )}], 
+         Cell[
+          StyleData["CopyEvaluateCell"], StyleMenuListing -> None, 
+          ButtonStyleMenuListing -> Automatic, 
+          ButtonBoxOptions -> {ButtonFunction :> (FrontEndExecute[{
+               FrontEnd`SelectionCreateCell[
+                FrontEnd`InputNotebook[], All], 
+               FrontEnd`NotebookApply[
+                FrontEnd`InputNotebook[], #, All], 
+               FrontEnd`SelectionEvaluateCreateCell[
+                FrontEnd`InputNotebook[], All]}]& )}]}, Closed]]}, Open]]}, 
+  Visible -> False, FrontEndVersion -> 
+  "9.0 for Microsoft Windows (32-bit) (November 20, 2012)", StyleDefinitions -> 
+  "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 93, 4, 57, "Title"],
+Cell[CellGroupData[{
+Cell[685, 30, 47, 0, 83, "Section"],
+Cell[735, 32, 264, 4, 191, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1036, 41, 82, 4, 83, "Section"],
+Cell[CellGroupData[{
+Cell[1143, 49, 79, 4, 38, "Subsection"],
+Cell[1225, 55, 689, 17, 55, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1951, 77, 106, 4, 38, "Subsection"],
+Cell[2060, 83, 407, 10, 39, "Text"],
+Cell[2470, 95, 72, 2, 28, "Input"],
+Cell[2545, 99, 205, 6, 37, "Note"],
+Cell[2753, 107, 258, 5, 23, "Text"],
+Cell[3014, 114, 990, 22, 75, "Text"],
+Cell[4007, 138, 69, 2, 28, "Input"],
+Cell[4079, 142, 185, 4, 23, "Text"],
+Cell[4267, 148, 69, 2, 28, "Input"],
+Cell[4339, 152, 72, 2, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4448, 159, 141, 7, 38, "Subsection"],
+Cell[4592, 168, 262, 7, 23, "Text"],
+Cell[4857, 177, 218, 8, 28, "Input"],
+Cell[5078, 187, 445, 11, 39, "Text"],
+Cell[5526, 200, 135, 4, 28, "Input"],
+Cell[5664, 206, 147, 3, 37, "Note"],
+Cell[5814, 211, 721, 27, 39, "Text"],
+Cell[6538, 240, 357, 8, 39, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6944, 254, 32, 0, 83, "Section"],
+Cell[CellGroupData[{
+Cell[7001, 258, 98, 4, 38, "Subsection"],
+Cell[7102, 264, 773, 21, 39, "Text"],
+Cell[7878, 287, 86, 2, 28, "Input"],
+Cell[7967, 291, 77, 2, 28, "Input"],
+Cell[8047, 295, 103, 3, 28, "Input"],
+Cell[8153, 300, 102, 3, 28, "Input"],
+Cell[8258, 305, 106, 3, 28, "Input"],
+Cell[8367, 310, 553, 14, 39, "Text"],
+Cell[8923, 326, 149, 3, 23, "Text"],
+Cell[9075, 331, 399, 13, 69, "Input"],
+Cell[9477, 346, 82, 2, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9596, 353, 83, 4, 38, "Subsection"],
+Cell[9682, 359, 580, 12, 63, "Text"],
+Cell[10265, 373, 130, 4, 28, "Input"],
+Cell[10398, 379, 99, 3, 28, "Input"],
+Cell[10500, 384, 97, 3, 28, "Input"],
+Cell[10600, 389, 86, 2, 28, "Input"],
+Cell[10689, 393, 80, 2, 28, "Input"],
+Cell[10772, 397, 130, 4, 28, "Input"],
+Cell[10905, 403, 79, 2, 28, "Input"],
+Cell[10987, 407, 234, 7, 28, "Input"],
+Cell[11224, 416, 264, 8, 23, "Text"],
+Cell[11491, 426, 140, 4, 28, "Input"],
+Cell[11634, 432, 109, 3, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11780, 440, 116, 5, 38, "Subsection"],
+Cell[11899, 447, 84, 2, 23, "Text"],
+Cell[11986, 451, 1636, 57, 99, "2ColumnTable"],
+Cell[13625, 510, 68, 0, 23, "Text"],
+Cell[13696, 512, 1228, 41, 87, "2ColumnTable"],
+Cell[14927, 555, 73, 2, 28, "Input"],
+Cell[15003, 559, 71, 2, 28, "Input"],
+Cell[15077, 563, 514, 13, 39, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15640, 582, 50, 0, 83, "Section"],
+Cell[CellGroupData[{
+Cell[15715, 586, 74, 4, 40, "Subsection"],
+Cell[15792, 592, 401, 10, 39, "Text"],
+Cell[16196, 604, 140, 4, 28, "Input"],
+Cell[16339, 610, 115, 4, 28, "Input"],
+Cell[16457, 616, 73, 2, 28, "Input"],
+Cell[16533, 620, 218, 5, 23, "Text"],
+Cell[16754, 627, 160, 5, 28, "Input"],
+Cell[16917, 634, 313, 10, 23, "Text"],
+Cell[17233, 646, 303, 10, 28, "Input"],
+Cell[17539, 658, 579, 14, 125, "Note"],
+Cell[18121, 674, 542, 20, 23, "Text"],
+Cell[18666, 696, 181, 6, 28, "Input"],
+Cell[18850, 704, 255, 6, 23, "Text"],
+Cell[19108, 712, 244, 8, 28, "Input"],
+Cell[19355, 722, 175, 7, 23, "Text"],
+Cell[19533, 731, 231, 7, 28, "Input"],
+Cell[19767, 740, 161, 6, 23, "Text"],
+Cell[19931, 748, 111, 3, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20079, 756, 109, 4, 40, "Subsection"],
+Cell[20191, 762, 257, 4, 23, "Text"],
+Cell[20451, 768, 249, 7, 28, "Input"],
+Cell[20703, 777, 76, 2, 28, "Input"],
+Cell[20782, 781, 159, 5, 23, "Text"],
+Cell[20944, 788, 256, 8, 28, "Input"],
+Cell[21203, 798, 191, 6, 28, "Input"],
+Cell[21397, 806, 351, 14, 23, "Text"],
+Cell[21751, 822, 332, 10, 37, "Note"],
+Cell[22086, 834, 117, 3, 23, "Text"],
+Cell[22206, 839, 206, 6, 28, "Input"],
+Cell[22415, 847, 235, 7, 28, "Input"],
+Cell[22653, 856, 251, 7, 28, "Input"],
+Cell[22907, 865, 437, 12, 39, "Text"],
+Cell[23347, 879, 156, 5, 28, "Input"],
+Cell[23506, 886, 193, 6, 28, "Input"],
+Cell[23702, 894, 85, 2, 23, "Text"],
+Cell[23790, 898, 273, 9, 28, "Input"],
+Cell[24066, 909, 275, 11, 23, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24378, 925, 127, 4, 40, "Subsection"],
+Cell[24508, 931, 234, 6, 23, "Text"],
+Cell[24745, 939, 193, 6, 28, "Input"],
+Cell[24941, 947, 165, 5, 28, "Input"],
+Cell[25109, 954, 194, 5, 23, "Text"],
+Cell[25306, 961, 220, 7, 28, "Input"],
+Cell[25529, 970, 258, 9, 28, "Input"],
+Cell[25790, 981, 470, 13, 23, "Text"],
+Cell[26263, 996, 140, 4, 28, "Input"],
+Cell[26406, 1002, 189, 6, 28, "Input"],
+Cell[26598, 1010, 236, 7, 28, "Input"],
+Cell[26837, 1019, 178, 6, 23, "Text"],
+Cell[27018, 1027, 408, 14, 28, "Input"],
+Cell[27429, 1043, 89, 2, 28, "Input"],
+Cell[27521, 1047, 430, 11, 39, "Text"],
+Cell[27954, 1060, 341, 12, 37, "Input"],
+Cell[28298, 1074, 208, 7, 23, "Text"],
+Cell[28509, 1083, 189, 7, 32, "Input"],
+Cell[28701, 1092, 258, 9, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28996, 1106, 96, 4, 40, "Subsection"],
+Cell[29095, 1112, 318, 9, 23, "Text"],
+Cell[29416, 1123, 177, 5, 28, "Input"],
+Cell[29596, 1130, 429, 13, 69, "Input"],
+Cell[30028, 1145, 151, 6, 23, "Text"],
+Cell[30182, 1153, 316, 12, 23, "Text"],
+Cell[30501, 1167, 203, 6, 28, "Input"],
+Cell[30707, 1175, 171, 5, 28, "Input"],
+Cell[30881, 1182, 116, 3, 28, "Input"],
+Cell[31000, 1187, 118, 3, 28, "Input"],
+Cell[31121, 1192, 120, 3, 28, "Input"],
+Cell[31244, 1197, 144, 4, 23, "Text"],
+Cell[31391, 1203, 217, 7, 28, "Input"],
+Cell[31611, 1212, 346, 8, 69, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31994, 1225, 87, 4, 40, "Subsection"],
+Cell[32084, 1231, 1398, 34, 42, "Text",
+ CounterIncrements->"Text"],
+Cell[33485, 1267, 330, 8, 23, "Text"],
+Cell[33818, 1277, 2120, 72, 159, "2ColumnTable"],
+Cell[35941, 1351, 34, 0, 23, "Text"],
+Cell[35978, 1353, 231, 9, 49, "Input"],
+Cell[36212, 1364, 248, 4, 23, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36509, 1374, 30, 0, 83, "Section"],
+Cell[CellGroupData[{
+Cell[36564, 1378, 99, 4, 40, "Subsection"],
+Cell[36666, 1384, 84, 3, 23, "Text"],
+Cell[36753, 1389, 157, 5, 28, "Input"],
+Cell[36913, 1396, 77, 3, 23, "Text"],
+Cell[36993, 1401, 206, 7, 28, "Input"],
+Cell[37202, 1410, 156, 6, 25, "Text"],
+Cell[37361, 1418, 167, 5, 28, "Input"],
+Cell[37531, 1425, 40, 0, 23, "Text"],
+Cell[37574, 1427, 182, 6, 44, "Input"],
+Cell[37759, 1435, 190, 5, 23, "Text"],
+Cell[37952, 1442, 232, 7, 28, "Input"],
+Cell[38187, 1451, 75, 2, 23, "Text"],
+Cell[38265, 1455, 233, 7, 28, "Input"],
+Cell[38501, 1464, 123, 3, 23, "Text"],
+Cell[38627, 1469, 399, 13, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39063, 1487, 87, 4, 40, "Subsection"],
+Cell[39153, 1493, 282, 6, 23, "Text"],
+Cell[39438, 1501, 196, 6, 28, "Input"],
+Cell[39637, 1509, 221, 7, 28, "Input"],
+Cell[39861, 1518, 123, 3, 23, "Text"],
+Cell[39987, 1523, 74, 2, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40098, 1530, 99, 4, 40, "Subsection"],
+Cell[40200, 1536, 149, 3, 23, "Text"],
+Cell[40352, 1541, 191, 6, 28, "Input"],
+Cell[40546, 1549, 223, 7, 28, "Input"],
+Cell[40772, 1558, 221, 7, 28, "Input"],
+Cell[40996, 1567, 215, 7, 28, "Input"],
+Cell[41214, 1576, 251, 8, 28, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41514, 1590, 55, 0, 83, "Section"],
+Cell[CellGroupData[{
+Cell[41594, 1594, 103, 4, 40, "Subsection"],
+Cell[41700, 1600, 210, 5, 23, "Text"],
+Cell[41913, 1607, 245, 8, 28, "Input"],
+Cell[42161, 1617, 292, 6, 23, "Text"],
+Cell[42456, 1625, 286, 9, 28, "Input"],
+Cell[42745, 1636, 334, 8, 23, "Text"],
+Cell[43082, 1646, 226, 8, 28, "Input"],
+Cell[43311, 1656, 148, 5, 23, "Text"],
+Cell[43462, 1663, 185, 7, 28, "Input"],
+Cell[43650, 1672, 78, 2, 28, "Input"],
+Cell[43731, 1676, 131, 4, 23, "Text"],
+Cell[43865, 1682, 192, 7, 28, "Input"],
+Cell[44060, 1691, 153, 3, 23, "Text"],
+Cell[44216, 1696, 484, 16, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44737, 1717, 91, 4, 40, "Subsection"],
+Cell[44831, 1723, 191, 4, 23, "Text"],
+Cell[45025, 1729, 316, 10, 28, "Input"],
+Cell[45344, 1741, 461, 15, 28, "Input"],
+Cell[45808, 1758, 391, 12, 23, "Text"],
+Cell[46202, 1772, 677, 23, 28, "Input"],
+Cell[46882, 1797, 358, 8, 23, "Text"],
+Cell[47243, 1807, 524, 17, 28, "Input"],
+Cell[47770, 1826, 142, 3, 23, "Text"],
+Cell[47915, 1831, 193, 6, 28, "Input"],
+Cell[48111, 1839, 197, 4, 23, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48357, 1849, 37, 0, 83, "Section"],
+Cell[CellGroupData[{
+Cell[48419, 1853, 89, 4, 40, "Subsection"],
+Cell[48511, 1859, 233, 4, 23, "Text"],
+Cell[48747, 1865, 253, 8, 28, "Input"],
+Cell[49003, 1875, 144, 4, 28, "Input"],
+Cell[49150, 1881, 177, 5, 28, "Input"],
+Cell[49330, 1888, 336, 11, 28, "Input"],
+Cell[49669, 1901, 234, 5, 28, "Input"],
+Cell[49906, 1908, 209, 6, 28, "Input"],
+Cell[50118, 1916, 217, 5, 23, "Text"],
+Cell[50338, 1923, 267, 9, 28, "Input"],
+Cell[50608, 1934, 66, 2, 23, "Text"],
+Cell[50677, 1938, 177, 5, 28, "Input"],
+Cell[50857, 1945, 63, 2, 23, "Text"],
+Cell[50923, 1949, 92, 2, 28, "Input"],
+Cell[51018, 1953, 133, 4, 23, "Text"],
+Cell[51154, 1959, 117, 3, 28, "Input"],
+Cell[51274, 1964, 105, 3, 23, "Text"],
+Cell[51382, 1969, 81, 2, 28, "Input"],
+Cell[51466, 1973, 85, 2, 28, "Input"],
+Cell[51554, 1977, 126, 3, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51717, 1985, 93, 4, 40, "Subsection"],
+Cell[51813, 1991, 583, 16, 39, "Text"],
+Cell[52399, 2009, 316, 11, 28, "Input"],
+Cell[52718, 2022, 169, 4, 23, "Text"],
+Cell[52890, 2028, 280, 10, 28, "Input"],
+Cell[53173, 2040, 309, 7, 23, "Text"],
+Cell[53485, 2049, 272, 9, 28, "Input"],
+Cell[53760, 2060, 169, 5, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53966, 2070, 96, 4, 40, "Subsection"],
+Cell[54065, 2076, 676, 21, 39, "Text"],
+Cell[54744, 2099, 363, 12, 28, "Input"],
+Cell[55110, 2113, 89, 2, 28, "Input"],
+Cell[55202, 2117, 90, 2, 28, "Input"],
+Cell[55295, 2121, 172, 4, 23, "Text"],
+Cell[55470, 2127, 161, 5, 28, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55680, 2138, 28, 0, 83, "Section"],
+Cell[CellGroupData[{
+Cell[55733, 2142, 83, 4, 40, "Subsection"],
+Cell[55819, 2148, 119, 3, 23, "Text"],
+Cell[55941, 2153, 289, 9, 30, "Input"],
+Cell[56233, 2164, 296, 11, 23, "Text"],
+Cell[56532, 2177, 431, 13, 28, "Input"],
+Cell[56966, 2192, 127, 4, 23, "Text"],
+Cell[57096, 2198, 510, 15, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57643, 2218, 83, 4, 40, "Subsection"],
+Cell[57729, 2224, 237, 9, 23, "Text"],
+Cell[57969, 2235, 633, 21, 30, "Input"],
+Cell[58605, 2258, 351, 9, 23, "Text"],
+Cell[58959, 2269, 441, 13, 28, "Input"],
+Cell[59403, 2284, 336, 9, 28, "Input"],
+Cell[59742, 2295, 850, 24, 49, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60629, 2324, 115, 4, 40, "Subsection"],
+Cell[60747, 2330, 219, 7, 23, "Text"],
+Cell[60969, 2339, 374, 11, 28, "Input"],
+Cell[61346, 2352, 264, 8, 23, "Text"],
+Cell[61613, 2362, 429, 13, 28, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62091, 2381, 71, 2, 83, "Section"],
+Cell[62165, 2385, 266, 6, 23, "Text"],
+Cell[62434, 2393, 339, 10, 28, "Input"],
+Cell[CellGroupData[{
+Cell[62798, 2407, 105, 4, 40, "Subsection"],
+Cell[62906, 2413, 191, 5, 23, "Text"],
+Cell[63100, 2420, 162, 5, 28, "Input"],
+Cell[63265, 2427, 237, 7, 23, "Text"],
+Cell[63505, 2436, 350, 12, 28, "Input"],
+Cell[63858, 2450, 275, 7, 23, "Text"],
+Cell[64136, 2459, 310, 10, 28, "Input"],
+Cell[64449, 2471, 266, 8, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64752, 2484, 92, 4, 40, "Subsection"],
+Cell[64847, 2490, 159, 3, 23, "Text"],
+Cell[65009, 2495, 757, 28, 37, "Input"],
+Cell[65769, 2525, 338, 7, 23, "Text"],
+Cell[66110, 2534, 288, 8, 28, "Input"],
+Cell[66401, 2544, 74, 2, 23, "Text"],
+Cell[66478, 2548, 593, 17, 89, "Input"],
+Cell[67074, 2567, 220, 4, 23, "Text"],
+Cell[67297, 2573, 213, 5, 49, "Input"],
+Cell[67513, 2580, 1164, 37, 109, "Input"],
+Cell[68680, 2619, 281, 9, 28, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68998, 2633, 89, 4, 40, "Subsection"],
+Cell[69090, 2639, 216, 5, 23, "Text"],
+Cell[69309, 2646, 430, 15, 31, "DisplayFormula"],
+Cell[69742, 2663, 162, 4, 23, "Text"],
+Cell[69907, 2669, 230, 8, 40, "DisplayFormula"],
+Cell[70140, 2679, 515, 10, 39, "Text"],
+Cell[70658, 2691, 179, 5, 28, "Input"],
+Cell[70840, 2698, 398, 13, 28, "Input"],
+Cell[71241, 2713, 231, 6, 23, "Text"],
+Cell[71475, 2721, 617, 17, 49, "Input"],
+Cell[72095, 2740, 171, 3, 23, "Text"],
+Cell[72269, 2745, 411, 14, 28, "Input"],
+Cell[72683, 2761, 162, 3, 23, "Text"],
+Cell[72848, 2766, 356, 12, 28, "Input"],
+Cell[73207, 2780, 464, 15, 28, "Input"],
+Cell[73674, 2797, 299, 5, 39, "Text"],
+Cell[73976, 2804, 161, 5, 28, "Input"],
+Cell[74140, 2811, 366, 12, 28, "Input"],
+Cell[74509, 2825, 583, 20, 49, "Input"],
+Cell[75095, 2847, 275, 9, 28, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
