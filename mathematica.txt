@@ -1,0 +1,113 @@
+Mathematica Kurs:
+
+
+Mathematica-Operatoren beginnen mit Großbuchstaben
+Beschreibung aufrufen mit ?Operator
+
+Wurzel: Sqrt[x] oder x^(1/2)
+Winkelfunktionen: sin: Sin[x], cos: Cos[x], tan: Tan[x]
+inverse Winkelfunktionen: asin: ArcSin[x], acos: ArcCos[x], atan: ArcTan[x]
+Exponentialfunktion: Exp[x] oder E^x
+natürlicher Logarithmus: Log[x]
+10er Logarithmus: Log[10,x]
+
+Hold[expression] gibt Ausdruck unausgewertet zurück (schön dargestellt)
+Clear[symbol] löscht gespeicherten Wert
+Integrate[term, x] integriert Funktion nach x
+D[term, x] differenziert Funktion nach x
+z.B. D[Sin[x], x] gibt Cos[x]
+
+
+Listen in Mathematica sind Vektoren {1,2,3,4}
+
+Komponentenweise Multiplikation: v1 * v2
+Skalarprodukt von Vektoren: v1 . v2
+Vektor- / Kreuzprodukt: Cross[v1, v2]
+
+Mathematica kann verschiedene Darstellungen:
+FullForm[etwas] ist die interne Mathematica-Darstellung
+-> alles als Listen dargestellt, z.B. ist FullForm[a+b] gleich mit Plus[a, b]
+-> anwenden anderer Operatoren: Apply[Plus, vector] gibt Summe der Elemente zurück
+TreeForm[etwas] gibt Baumdarstellung der Datenstruktur
+
+Funktionen definieren:
+- Alle Variablen mit Underscore_ sind Platzhalter
+- := ist tag-delay, Auführung erst wenn Argument gegeben wird
+- hier Funktion nach Patternmatching
+myfun[t_] := 2*t^2 + 3*t
+
+Function-Objekt: Lambda-Fkt
+fun1 = Function[{x}, 3*x^2]
+
+Funktionsparameter nicht benennen sondern nummerieren mit #:
+fun2 = 3. * #1^2 &
+
+Compile Functions für Exportieren und Optimieren, z.B. C-Programme:
+fun3 = Compile [{x}, 3*x^2]
+
+Matrizen:
+MatrixForm[{{a,b,c},{d,e,f}}] gibt die gewohnte mathematische Matrixdarstellung aus
+
+Elementzugriff mit doppelten eckigen Kammern: mat[[2]] gibt {d,e,f}
+Zugriff auf {b, e} mit mat[[All, 2]]
+
+Auszug aus Listen mit doppeltem Semikolon ;;
+Zugriff auf {b, e} mit mat[[1 ;; -1, 2]]
+
+Funktion anwenden auf Matrixelemente (Level 2):
+Map[func, mat, {2}]
+
+Mit Apply und Map können gleiche Ergebnisse erzielt werden: 
+Bsp:
+fun10 [x_] := {x[[1]], x[[2]]^2, Sqrt[x[[3]]]}
+MatrixForm[Map[fun10, mat, {1}]]
+
+entspricht mit Apply:
+fun11[x_, y_, z_] := {x, y^2, Sqrt[z]}
+MatrixForm[Apply[fun11, mat, {1}]]
+
+Dateizugriff:
+Directory[]
+SetDirectory["/.../..."]
+FileNames["*.dat"] zeigt alle .dat Dateien im working directory
+data = Import["Rdat3.dat", "Table"]; (das ; verhindert sofortige Datenausgabe)
+Dimensions[data]
+Depth[data] maximale Zahl von benögtigeten Indizes zur Referenzierung plus 1
+
+Daten in Tabelle anzeigen:
+Grid[data[[1;;8]], Frame-> All]
+
+
+Plotten:
+ListPlot[data]
+ListLogPlot[data] (y-Achse logarithmisch)
+ErrorListPlot[{{y1, dy1},{y2,dy2},...}]
+ErrorListPlot[{{{x1,y1},ErrorBar[err1]},{{x2,y2},Errorbar[err2]}, ...}]
+BarChart[]
+PieChart[]
+PieChart3D[]
+Histogram
+Show[plot1, plot2] zeigt die zwei plots gleichzeitig an
+
+
+z.B.
+Plot[{term1, term2, term3}, {x, -5, 5}, Frame -> True, Filling -> Axis, GridLines -> Automatic, FrameLabel -> {"x-Achse", "y-Achse"}]
+
+funerr[x_, y_] := {{x, N[y]}, ErrorBar[Sqrt[N[y]]]}
+ErrorListPlot[Apply[funerr, data, {1}], PlotMarkers -> {Automatic, 7}]
+
+Length[data]
+Dimensions[data]
+
+
+Statistik:
+PDF[PoissonDistribution[mue], x]
+Plot[{PDF[ChiSquareDistribution[5], x], PDF[ChiSquareDistribution[10], x]}, {x, 0, 20}]
+
+
+
+
+
+
+
+
